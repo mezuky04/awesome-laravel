@@ -1,0 +1,45 @@
+$brand: #224e6b;
+$secondary: #76C2AF;
+
+.white-text {
+  color: #ffffff;
+}
+
+.blue-grey-text {
+  color: #455a64;
+}
+
+.thin {
+  font-family: 'Roboto',  sans-serif;
+}
+
+.btn-ghost {
+  border: 2px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  transition: background-color 400ms;
+}
+
+.btn-ghost:hover, .btn-ghost:active, .btn-ghost:focus {
+  background-color: #ffffff;
+  color: #224E6B;
+  transition: background-color 400ms;
+}
+
+.btn-ghost-inverse {
+  background-color: rgba(0, 0, 0, 0);
+  color: $secondary;
+  border: 2px solid $secondary;
+  transition: 400ms;
+}
+
+.btn-ghost-inverse:hover, .btn-ghost-inverse:active {
+  background-color: $secondary;
+  color: #ffffff;
+  border-color: $secondary;
+  transition: background-color 400ms, border-color 400ms, color 400ms;
+}
+
+.center-responsive-image {
+  margin: 0 auto;
+}
