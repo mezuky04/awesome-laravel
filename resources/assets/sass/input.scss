@@ -11,3 +11,7 @@ $input-border-focus: $secondary;
 .custom-input:focus {
   border: 2px solid $secondary;
 }
+
+.custom-error, .custom-error:active, .custom-error:focus {
+  border: 2px solid $error;
+}

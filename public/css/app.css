@@ -4315,7 +4315,7 @@ a.thumbnail.active {
 .alert {
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 4px; }
   .alert h4 {
     margin-top: 0;
@@ -4366,13 +4366,13 @@ a.thumbnail.active {
     color: #66512c; }
 
 .alert-danger {
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  color: #a94442; }
+  background-color: transparent;
+  border-color: #e57373;
+  color: #e57373; }
   .alert-danger hr {
-    border-top-color: #e4b9c0; }
+    border-top-color: #e15d5d; }
   .alert-danger .alert-link {
-    color: #843534; }
+    color: #dd4848; }
 
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -6070,5 +6070,8 @@ body {
 
 .custom-input:focus {
   border: 2px solid #76C2AF; }
+
+.custom-error, .custom-error:active, .custom-error:focus {
+  border: 2px solid #e57373; }
 
 /*# sourceMappingURL=app.css.map */

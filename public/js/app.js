@@ -23351,6 +23351,7 @@ jQuery(document).ready(function () {
 
 var Vue = require('vue');
 Vue.use(require('vue-resource'));
+Vue.config.debug = true;
 
 new Vue({
     el: '#app',
@@ -23371,13 +23372,19 @@ exports.default = {
         return {
             token: document.getElementById('_token').getAttribute('content'),
             email: '',
-            password: ''
+            password: '',
+            errors: {},
+            error: '',
+            loading: false
         };
     },
 
     methods: {
 
         login: function login() {
+
+            var vn = this;
+            this.loading = true;
 
             var credentials = {
                 _token: this.token,
@@ -23386,15 +23393,32 @@ exports.default = {
             };
 
             this.$http.post('/login', credentials).then(function (success) {
-                //
+
+                vn.loading = false;
+
+                if (success.data.success) {
+                    window.location.replace('/admin-center');
+                }
             }, function (error) {
-                //
+
+                vn.loading = false;
+
+                if (error.data.errors) {
+                    vn.errors = error.data.errors;
+                    vn.error = '';
+                } else if (error.data.error) {
+                    vn.error = error.data.error;
+                    vn.errors = {};
+                } else {
+                    vn.error = 'An error occurred. Refresh the page an try again.';
+                    vn.errors = {};
+                }
             });
         }
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4 login\">\n        <!-- BEGIN Email -->\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"blue-grey-text\">Email:</label>\n            <input v-model=\"email\" type=\"email\" id=\"email\" class=\"form-control custom-input\" placeholder=\"Your email\" autocomplete=\"off\">\n        </div>\n        <!-- END Email -->\n\n        <!-- BEGIN Password -->\n        <div class=\"form-group\">\n            <label for=\"password\" class=\"blue-grey-text\">Password:</label>\n            <input v-model=\"password\" type=\"password\" id=\"password\" placeholder=\"Your password\" class=\"form-control custom-input\">\n        </div>\n        <!-- END Password -->\n        \n        <!-- BEGIN Log in -->\n        <div class=\"btn btn-block btn-ghost-inverse\" @click=\"login\">Log in</div>\n        <!-- END Log in -->\n    </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4 login\">\n\n        <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n\n        <!-- BEGIN Email -->\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"blue-grey-text\">Email:</label>\n            <input v-model=\"email\" @keyup.enter=\"login\" v-bind:class=\"{ 'custom-error': errors.email }\" type=\"email\" id=\"email\" class=\"form-control custom-input\" placeholder=\"Your email\" autocomplete=\"off\">\n            <span :v-show=\"errors.email\" class=\"text-danger\">{{ errors.email }}</span>\n        </div>\n        <!-- END Email -->\n\n        <!-- BEGIN Password -->\n        <div class=\"form-group\">\n            <label for=\"password\" class=\"blue-grey-text\">Password:</label>\n            <input v-model=\"password\" @keyup.enter=\"login\" v-bind:class=\"{ 'custom-error': errors.password }\" type=\"password\" id=\"password\" placeholder=\"Your password\" class=\"form-control custom-input\">\n            <span v-show=\"errors.password\" class=\"text-danger\">{{ errors.password }}</span>\n        </div>\n        <!-- END Password -->\n        \n        <!-- BEGIN Log in -->\n        <div class=\"btn btn-block btn-ghost-inverse\" @click=\"login\">\n            <span v-show=\"!loading\">Log in</span>\n            <img v-show=\"loading\" src=\"/img/loader.svg\">\n        </div>\n        <!-- END Log in -->\n    </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 
 var Vue = require('vue');
 Vue.use(require('vue-resource'));
-
+Vue.config.debug = true;
 
 import Login from './components/Login.vue';
 

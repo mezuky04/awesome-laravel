@@ -3,10 +3,15 @@
 Route::get('/', 'HomeController@index');
 Route::get('/submit-resource', 'SubmitResourceController@index');
 
-Route::auth();
+Route::get('/login', 'LoginController@index')->middleware('guest');
+Route::post('/login', 'LoginController@login')->middleware('guest');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/logout', 'LoginController@logout')->middleware('auth');
 
-Route::auth();
+//Route::auth();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
+
+//Route::auth();
+
+//Route::get('/home', 'HomeController@index');
