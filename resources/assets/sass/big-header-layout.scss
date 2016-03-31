@@ -26,10 +26,14 @@ body {
   background-color: $brand;
 }
 
-.submit-resource-row {
+.submit-resource-row, .homepage-row {
   padding: 20px 0 20px 0;
 }
 
 .icon {
   padding: 30px 0 45px 0;
+}
+
+.login {
+  margin-top: 30px;
 }

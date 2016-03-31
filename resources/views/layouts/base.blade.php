@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
+    <meta name="_token" id="_token" content="{{ csrf_token() }}">
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
@@ -15,7 +15,7 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body>
+<body id="app">
 <div id="wrapper">
 
     <!-- BEGIN Header -->
@@ -24,9 +24,6 @@
         <div class="container-fluid header">
 
             <div class="container">
-                <div class="row submit-resource-row">
-                    <a href="/submit-resource"><div class="btn btn-ghost">Submit resource</div></a>
-                </div>
                 @yield('header-content')
             </div>
 

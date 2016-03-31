@@ -1,0 +1,13 @@
+/**
+ * Custom input styles.
+ */
+$input-border: #cccccc;
+$input-border-focus: $secondary;
+
+.custom-input {
+  border: 2px solid $input-border;
+}
+
+.custom-input:focus {
+  border: 2px solid $secondary;
+}
