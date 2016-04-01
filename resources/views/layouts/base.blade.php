@@ -43,8 +43,8 @@
 
     <!-- BEGIN Footer -->
     <div id="footer">
-        <div class="container">
-            footer
+        <div class="container text-center">
+            <span class="footer-text">Created with &hearts; by <a href="#">Alex</a> - Source code available on <a href="#">GitHub</a></span>
         </div>
     </div>
     <!-- END Footer -->
