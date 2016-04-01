@@ -23348,15 +23348,14 @@ var _SubmitResource2 = _interopRequireDefault(_SubmitResource);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.jQuery = require('jquery');
+var Vue = require('vue');
+
+// Require bootstrap, sweetalert and bootstrap select plugin
 require('../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js');
 require('../../../node_modules/sweetalert/dist/sweetalert.min.js');
 require('bootstrap-select');
 
-jQuery(document).ready(function () {
-    jQuery('select').selectpicker();
-});
-
-var Vue = require('vue');
+// Vue resource, used for ajax requests
 Vue.use(require('vue-resource'));
 
 // Enable debug mode
@@ -23455,37 +23454,55 @@ exports.default = {
             resourceLink: '',
             yourEmail: '',
             categoryId: '',
-            categories: {},
+            categories: [],
             errors: {},
             error: '',
             loading: false,
-            loadingResourceCategories: false
+            loadingResourceCategories: false,
+            done: false
         };
     },
 
-    ready: function ready() {
+    created: function created() {
         this.loadResourceCategories();
     },
 
-    methods: {
-        test: function test() {
-            swal({
-                title: "Sweet!",
-                text: "Here's a custom image.",
-                animation: 'pop',
-                type: 'success'
-            });
-        },
+    computed: {
+        selectStyle: function selectStyle() {
 
+            if (!this.errors.category_id) {
+                return 'btn-default-inverse';
+            }
+
+            if (this.errors.category_id.length) {
+                return 'btn-default-inverse-error';
+            }
+        }
+    },
+
+    methods: {
+
+        /**
+         * Load all categories.
+         */
         loadResourceCategories: function loadResourceCategories() {
 
             this.loadingResourceCategories = true;
             var vn = this;
 
+            // Make request to get categories
             this.$http.get('/get-categories').then(function (success) {
-                vn.loadingResourceCategories = false;
-                vn.categories = success.data.categories;
+
+                vn.categories = success.data;
+
+                // Use select picker after results are loaded
+                setTimeout(function () {
+                    vn.loadingResourceCategories = false;
+                    jQuery('#selectpicker').selectpicker();
+                }, 100);
             }, function (error) {
+
+                // Handle error case
                 vn.loadingResourceCategories = false;
 
                 if (error.data.error) {
@@ -23523,6 +23540,7 @@ exports.default = {
             this.$http.post('/submit-resource', data).then(function (success) {
 
                 vn.loading = false;
+                vn.done = true;
             }, function (error) {
 
                 vn.loading = false;
@@ -23542,7 +23560,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n    <div class=\"col-md-8 col-md-offset-2\">\n\n        <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n\n        <!-- BEGIN Resource category -->\n        <div v-show=\"loadingResourceCategories\">Loading categories...</div>\n        <div v-show=\"!loadingResourceCategories &amp;&amp; categories\" class=\"form-group\">\n            <label>Choose resource category:</label>\n            <br>\n            <select class=\"selectpicker input-large\" data-style=\"btn-block btn-default-inverse\" v-model=\"categoryId\">\n                <option v-for=\"category in categories\" value=\"{{ category.id }}\">{{ category.name }}</option>\n            </select>\n        </div>\n        <!-- END Resource category -->\n\n        <!-- BEGIN Resource name -->\n        <div class=\"form-group\">\n            <label for=\"resource-name\">Resource name:</label>\n            <input v-model=\"resourceName\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_name }\" type=\"text\" id=\"resource-name\" class=\"form-control custom-input\" placeholder=\"Example: Laracasts\" autocomplete=\"off\">\n            <span v-show=\"errors.resource_name\">{{ errors.resource_name }}</span>\n        </div>\n        <!-- END Resource name -->\n\n        <!-- BEGIN Short resource description -->\n        <div class=\"form-group\">\n            <label for=\"short-resource-description\">Short resource description:</label>\n            <input v-model=\"shortResourceDescription\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.short_resource_description }\" type=\"text\" id=\"short-resource-description\" class=\"form-control custom-input\" placeholder=\"Example: Learn practical, modern web development, through expert screencasts.\">\n            <span v-show=\"errors.short_resource_description\">{{ errors.short_resource_description }}</span>\n        </div>\n        <!-- END Short resource description -->\n\n        <!-- BEGIN Resource link -->\n        <div class=\"form-group\">\n            <label for=\"resource-link\">Resource link:</label>\n            <input v-model=\"resourceLink\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_link }\" type=\"text\" id=\"resource-link\" class=\"form-control custom-input\" placeholder=\"https://laracasts.com\">\n            <span v-show=\"errors.resource_link\">{{ errors.resource_link }}</span>\n        </div>\n        <!-- END Resource link -->\n\n        <!-- BEGIN Your email -->\n        <div class=\"form-group\">\n            <label for=\"your-email\">Your email:</label>\n            <input v-model=\"yourEmail\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.your_email }\" type=\"email\" id=\"your-email\" class=\"form-control custom-input\" placeholder=\"john.doe@example.com\">\n            <span v-show=\"errors.your_email\">{{ errors.your_email }}</span>\n        </div>\n        <!-- END Your email -->\n\n        <!-- BEGIN Submit resource -->\n        <div class=\"btn btn-block btn-ghost-inverse\" @click=\"submit\">Share resource with others</div>\n        <!-- END Submit resource -->\n\n    </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row submit-resource\">\n    <div class=\"col-md-8 col-md-offset-2\">\n\n        <div v-show=\"done\" class=\"alert alert-success\">Success! Your resource was sent and is waiting for approval. You will receive an email soon.</div>\n\n        <div v-show=\"!done\">\n            <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n\n            <!-- BEGIN Resource category -->\n            <div v-show=\"loadingResourceCategories\">\n                <img src=\"/img/loader.svg\">\n            </div>\n            <div v-show=\"!loadingResourceCategories &amp;&amp; categories\" class=\"form-group\">\n                <label>Choose resource category:</label>\n                <br>\n                <select id=\"selectpicker\" v-model=\"categoryId\" data-style=\"selectStyle\">\n                    <option selected=\"selected\" disabled=\"disabled\">Nothing selected</option>\n                    <option v-for=\"category in categories\" value=\"{{ category.id }}\">{{ category.name }}</option>\n                </select>\n                <br>\n                <span class=\"text-danger\" v-show=\"errors.category_id\">{{ errors.category_id }}</span>\n            </div>\n            <!-- END Resource category -->\n\n            <!-- BEGIN Resource name -->\n            <div class=\"form-group\">\n                <label for=\"resource-name\">Resource name:</label>\n                <input v-model=\"resourceName\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_name }\" type=\"text\" id=\"resource-name\" class=\"form-control custom-input\" placeholder=\"Example: Laracasts\" autocomplete=\"off\">\n                <span class=\"text-danger\" v-show=\"errors.resource_name\">{{ errors.resource_name }}</span>\n            </div>\n            <!-- END Resource name -->\n\n            <!-- BEGIN Short resource description -->\n            <div class=\"form-group\">\n                <label for=\"short-resource-description\">Short resource description:</label>\n                <input v-model=\"shortResourceDescription\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.short_resource_description }\" type=\"text\" id=\"short-resource-description\" class=\"form-control custom-input\" placeholder=\"Example: Learn practical, modern web development, through expert screencasts.\">\n                <span class=\"text-danger\" v-show=\"errors.short_resource_description\">{{ errors.short_resource_description }}</span>\n            </div>\n            <!-- END Short resource description -->\n\n            <!-- BEGIN Resource link -->\n            <div class=\"form-group\">\n                <label for=\"resource-link\">Resource link:</label>\n                <input v-model=\"resourceLink\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_link }\" type=\"text\" id=\"resource-link\" class=\"form-control custom-input\" placeholder=\"https://laracasts.com\">\n                <span class=\"text-danger\" v-show=\"errors.resource_link\">{{ errors.resource_link }}</span>\n            </div>\n            <!-- END Resource link -->\n\n            <!-- BEGIN Your email -->\n            <div class=\"form-group\">\n                <label for=\"your-email\">Your email:</label>\n                <input v-model=\"yourEmail\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.your_email }\" type=\"email\" id=\"your-email\" class=\"form-control custom-input\" placeholder=\"john.doe@example.com\">\n                <span class=\"text-danger\" v-show=\"errors.your_email\">{{ errors.your_email }}</span>\n            </div>\n            <!-- END Your email -->\n\n            <!-- BEGIN Submit resource -->\n            <div class=\"btn btn-block btn-ghost-inverse\" @click=\"submit\">Share resource with others</div>\n            <!-- END Submit resource -->\n        </div>\n    </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

@@ -55,8 +55,8 @@ class SubmitResourceController extends Controller {
      * @return mixed
      */
     public function getCategories() {
-        $categories = ResourceCategory::all();
-        return response()->json(['categories' => $categories]);
+        $categories = ResourceCategory::select('id', 'name')->get();
+        return response()->json($categories);
     }
 
     /**
@@ -67,7 +67,7 @@ class SubmitResourceController extends Controller {
      */
     protected function formatValidationErrors(Validator $validator) {
 
-        $validatedFields = ['resource_name', 'short_resource_description', 'resource_link', 'your_email'];
+        $validatedFields = ['resource_name', 'short_resource_description', 'resource_link', 'your_email', 'category_id'];
 
         $messages = $validator->messages();
         $errors = [];

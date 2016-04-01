@@ -44,6 +44,10 @@
   transition: 400ms;
 }
 
+.btn-default-inverse-error {
+  border: 2px solid $error;
+}
+
 .btn-default-inverse:hover, .btn-default-inverse:active {
   background-color: $secondary;
   border-color: $secondary;

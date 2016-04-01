@@ -6031,6 +6031,9 @@ select.selectpicker {
   color: #999999;
   transition: 400ms; }
 
+.btn-default-inverse-error {
+  border: 2px solid #e57373; }
+
 .btn-default-inverse:hover, .btn-default-inverse:active {
   background-color: #76C2AF;
   border-color: #76C2AF;
@@ -6040,8 +6043,7 @@ select.selectpicker {
 .center-responsive-image {
   margin: 0 auto; }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%; }
@@ -6050,9 +6052,11 @@ body {
   min-height: 100%;
   position: relative; }
 
+.header {
+  background-color: #224e6b; }
+
 #content {
-  padding-bottom: 50px;
-  /* Height of the footer element */ }
+  padding-bottom: 50px; }
 
 #footer {
   width: 100%;
@@ -6066,9 +6070,6 @@ body {
   line-height: 50px;
   vertical-align: middle;
   color: #224e6b; }
-
-.header {
-  background-color: #224e6b; }
 
 .submit-resource-row, .homepage-row {
   padding: 20px 0 20px 0; }
@@ -7015,5 +7016,8 @@ body.stop-scrolling {
     opacity: 0;
     -webkit-transform: translateY(145%);
     transform: translateY(145%); } }
+
+.submit-resource {
+  margin: 50px 0 50px 0; }
 
 /*# sourceMappingURL=app.css.map */
