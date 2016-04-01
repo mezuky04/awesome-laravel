@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/app.css">
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -53,6 +52,5 @@
 
 
 <script src="/js/app.js"></script>
-
 </body>
 </html>

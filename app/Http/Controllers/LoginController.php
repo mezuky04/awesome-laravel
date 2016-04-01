@@ -33,7 +33,7 @@ class LoginController extends Controller {
      * @return mixed
      */
     public function login(Request $request) {
-sleep(5);
+
         // Validate credentials
         $this->validate($request, [
             'email' => ['required', 'email'],

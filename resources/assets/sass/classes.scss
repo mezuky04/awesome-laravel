@@ -37,6 +37,20 @@
   transition: background-color 400ms, border-color 400ms, color 400ms;
 }
 
+.btn-default-inverse {
+  border: 2px solid $grey;
+  background-color: rgba(0, 0, 0, 0);
+  color: darken($grey, 20);
+  transition: 400ms;
+}
+
+.btn-default-inverse:hover, .btn-default-inverse:active {
+  background-color: $secondary;
+  border-color: $secondary;
+  color: #ffffff;
+  transition: background-color 400ms, border-color 400ms, color 400ms;
+}
+
 .center-responsive-image {
   margin: 0 auto;
 }

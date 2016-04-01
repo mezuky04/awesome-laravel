@@ -1,0 +1,158 @@
+<template>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div v-show="error" class="alert alert-danger">{{ error }}</div>
+
+            <!-- BEGIN Resource category -->
+            <div v-show="loadingResourceCategories">Loading categories...</div>
+            <div v-show="!loadingResourceCategories && categories" class="form-group">
+                <label>Choose resource category:</label>
+                <br>
+                <select class="selectpicker input-large" data-style="btn-block btn-default-inverse" v-model="categoryId">
+                    <option v-for="category in categories" value="{{ category.id }}">{{ category.name }}</option>
+                </select>
+            </div>
+            <!-- END Resource category -->
+
+            <!-- BEGIN Resource name -->
+            <div class="form-group">
+                <label for="resource-name">Resource name:</label>
+                <input v-model="resourceName" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.resource_name }" type="text" id="resource-name" class="form-control custom-input" placeholder="Example: Laracasts" autocomplete="off" />
+                <span v-show="errors.resource_name">{{ errors.resource_name }}</span>
+            </div>
+            <!-- END Resource name -->
+
+            <!-- BEGIN Short resource description -->
+            <div class="form-group">
+                <label for="short-resource-description">Short resource description:</label>
+                <input v-model="shortResourceDescription" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.short_resource_description }" type="text" id="short-resource-description" class="form-control custom-input" placeholder="Example: Learn practical, modern web development, through expert screencasts." />
+                <span v-show="errors.short_resource_description">{{ errors.short_resource_description }}</span>
+            </div>
+            <!-- END Short resource description -->
+
+            <!-- BEGIN Resource link -->
+            <div class="form-group">
+                <label for="resource-link">Resource link:</label>
+                <input v-model="resourceLink" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.resource_link }" type="text" id="resource-link" class="form-control custom-input" placeholder="https://laracasts.com" />
+                <span v-show="errors.resource_link">{{ errors.resource_link }}</span>
+            </div>
+            <!-- END Resource link -->
+
+            <!-- BEGIN Your email -->
+            <div class="form-group">
+                <label for="your-email">Your email:</label>
+                <input v-model="yourEmail" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.your_email }" type="email" id="your-email" class="form-control custom-input" placeholder="john.doe@example.com" />
+                <span v-show="errors.your_email">{{ errors.your_email }}</span>
+            </div>
+            <!-- END Your email -->
+
+            <!-- BEGIN Submit resource -->
+            <div class="btn btn-block btn-ghost-inverse" @click="submit">Share resource with others</div>
+            <!-- END Submit resource -->
+
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+
+        data: function() {
+            return {
+                token: document.getElementById('_token').getAttribute('content'),
+                resourceName: '',
+                shortResourceDescription: '',
+                resourceLink: '',
+                yourEmail: '',
+                categoryId: '',
+                categories: {},
+                errors: {},
+                error: '',
+                loading: false,
+                loadingResourceCategories: false,
+            };
+        },
+
+        ready: function() {
+            this.loadResourceCategories();
+        },
+
+        methods: {
+            test: function() {
+                swal({
+                    title: "Sweet!",
+                    text: "Here's a custom image.",
+                    animation: 'pop',
+                    type: 'success'
+                });
+            },
+
+            loadResourceCategories: function() {
+
+                this.loadingResourceCategories = true;
+                var vn = this;
+
+                this.$http.get('/get-categories').then(function(success) {
+                    vn.loadingResourceCategories = false;
+                    vn.categories = success.data.categories;
+                }, function(error) {
+                    vn.loadingResourceCategories = false;
+
+                    if (error.data.error) {
+                        var message = error.data.error;
+                    } else {
+                        var message = 'An error occurred while loading the categories. Refresh the page and try again.';
+                    }
+
+                    swal({
+                        title: 'Oops.',
+                        text: message,
+                        type: 'error'
+                    });
+                });
+            },
+
+            /**
+             * Submit resource.
+             */
+            submit: function() {
+
+                var vn = this;
+                this.loading = true;
+
+                // Build post data
+                var data = {
+                    _token: this.token,
+                    resource_name: this.resourceName,
+                    short_resource_description: this.shortResourceDescription,
+                    resource_link: this.resourceLink,
+                    your_email: this.yourEmail,
+                    category_id: this.categoryId
+                };
+
+                this.$http.post('/submit-resource', data).then(function(success) {
+
+                    vn.loading = false;
+
+                }, function(error) {
+
+                    vn.loading = false;
+
+                    if (error.data.errors) {
+                        vn.errors = error.data.errors;
+                        vn.error = '';
+                    } else if (error.data.error) {
+                        vn.error = error.data.errors;
+                        vn.errors = {};
+                    } else {
+                        vn.error = 'An error occurred. Refresh the page and try again.'
+                        vn.errors = {};
+                    }
+
+                });
+
+            }
+        }
+    }
+</script>
