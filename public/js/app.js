@@ -23349,6 +23349,10 @@ var _Resources = require('./components/Resources.vue');
 
 var _Resources2 = _interopRequireDefault(_Resources);
 
+var _AdminCenter = require('./components/AdminCenter.vue');
+
+var _AdminCenter2 = _interopRequireDefault(_AdminCenter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // jQuery and Vue
@@ -23371,11 +23375,43 @@ new Vue({
     components: {
         'login': _Login2.default,
         'submit-resource': _SubmitResource2.default,
-        'resources': _Resources2.default
+        'resources': _Resources2.default,
+        'admin-center': _AdminCenter2.default
     }
 });
 
-},{"../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js":1,"../../../node_modules/sweetalert/dist/sweetalert.min.js":5,"./components/Login.vue":35,"./components/Resources.vue":36,"./components/SubmitResource.vue":38,"bootstrap-select":2,"jquery":3,"vue":31,"vue-resource":20}],33:[function(require,module,exports){
+},{"../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js":1,"../../../node_modules/sweetalert/dist/sweetalert.min.js":5,"./components/AdminCenter.vue":33,"./components/Login.vue":36,"./components/Resources.vue":38,"./components/SubmitResource.vue":40,"bootstrap-select":2,"jquery":3,"vue":31,"vue-resource":20}],33:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _PendingRequests = require('../components/PendingRequests.vue');
+
+var _PendingRequests2 = _interopRequireDefault(_PendingRequests);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: {
+        'pending-requests': _PendingRequests2.default
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<pending-requests></pending-requests>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/awesome-laravel/resources/assets/js/components/AdminCenter.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../components/PendingRequests.vue":37,"vue":31,"vue-hot-reload-api":6}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23435,7 +23471,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":31,"vue-hot-reload-api":6}],34:[function(require,module,exports){
+},{"vue":31,"vue-hot-reload-api":6}],35:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23455,7 +23491,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":31,"vue-hot-reload-api":6}],35:[function(require,module,exports){
+},{"vue":31,"vue-hot-reload-api":6}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23525,7 +23561,104 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":31,"vue-hot-reload-api":6}],36:[function(require,module,exports){
+},{"vue":31,"vue-hot-reload-api":6}],37:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+
+    data: function data() {
+        return {
+            pendingRequests: [],
+            loadingPendingRequests: false
+        };
+    },
+
+    /**
+     * Called on ready.
+     */
+    ready: function ready() {
+        this.getPendingRequests();
+    },
+
+    methods: {
+        getPendingRequests: function getPendingRequests() {
+            this.loadingPendingRequests = true;
+            var vn = this;
+
+            // Do request
+            this.$http.get('/admin-center/get-pending-requests').then(function (success) {
+                vn.loadingPendingRequests = false;
+                vn.pendingRequests = success.data;
+            }, function (error) {
+                vn.loadingPendingRequests = false;
+            });
+        },
+
+        /**
+         * Confirm resource and publish.
+         *
+         * @param resourceId
+         */
+        accept: function accept(resourceId) {
+
+            var vn = this;
+
+            this.$http.get('/admin-center/accept-resource-request/' + resourceId).then(function (success) {
+                vn.getPendingRequests();
+                swal({
+                    title: 'Success!',
+                    text: 'Resource added.',
+                    type: 'success',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            }, function (error) {
+                //
+            });
+        },
+
+        /**
+         * Decline resource and delete.
+         *
+         * @param resourceId
+         */
+        decline: function decline(resourceId) {
+
+            var vn = this;
+
+            this.$http.get('/admin-center/decline-resource-request/' + resourceId).then(function (success) {
+                vn.getPendingRequests();
+                swal({
+                    title: 'Success!',
+                    text: 'Resource deleted.',
+                    type: 'warning',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            }, function (error) {
+                //
+            });
+        }
+    }
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div v-if=\"pendingRequests.length &amp;&amp; !loadingPendingRequests\">\n    <h3 class=\"blue-grey-text\">Pending resource requests:</h3>\n    <div class=\"panel panel-default\">\n        <table class=\"table table-bordered\">\n            <thead>\n            <tr>\n                <th class=\"text-center blue-grey-text\">Name</th>\n                <th class=\"text-center blue-grey-text\">Short description</th>\n                <th class=\"text-center blue-grey-text\">Link</th>\n                <th class=\"text-center blue-grey-text\">Category</th>\n                <th class=\"text-center blue-grey-text\">Contributor email</th>\n                <th class=\"text-center blue-grey-text\">Review</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr v-for=\"request in pendingRequests\">\n                <td class=\"text-center blue-grey-text vert-align\">{{ request.name }}</td>\n                <td class=\"text-center blue-grey-text vert-align\">{{ request.short_description }}</td>\n                <td class=\"text-center blue-grey-text vert-align\">{{ request.link }}</td>\n                <td class=\"text-center blue-grey-text vert-align\">{{ request.category }}</td>\n                <td class=\"text-center blue-grey-text vert-align\">{{ request.contributor_email }}</td>\n                <td class=\"text-center\">\n                    <div class=\"dropdown\">\n                        <button class=\"btn btn-default-inverse dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">Review\n                            <span class=\"caret\"></span></button>\n                        <ul class=\"dropdown-menu\">\n                            <li @click=\"accept(request.id)\"><a href=\"#\"><span class=\"glyphicon glyphicon-ok\"></span>&nbsp;Accept</a></li>\n                            <li @click=\"decline(request.id)\"><a href=\"#\"><span class=\"glyphicon glyphicon-trash\"></span>&nbsp;Delete</a></li>\n                        </ul>\n                    </div>\n                </td>\n            </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n<div v-else=\"\">\n    <h3>There are no pending requests.</h3>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/awesome-laravel/resources/assets/js/components/PendingRequests.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":31,"vue-hot-reload-api":6}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23610,7 +23743,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/ChooseCategory.vue":33,"../components/Loader.vue":34,"../components/ResourcesList.vue":37,"vue":31,"vue-hot-reload-api":6}],37:[function(require,module,exports){
+},{"../components/ChooseCategory.vue":34,"../components/Loader.vue":35,"../components/ResourcesList.vue":39,"vue":31,"vue-hot-reload-api":6}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23620,7 +23753,7 @@ exports.default = {
     props: ['resources', 'category']
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n\n    <h3 v-if=\"!category\" class=\"blue-grey-text\">Last awesome resources added:</h3>\n    <h3 v-else=\"\" class=\"blue-grey-text\">Awesome esources from {{ category | lowercase }} category:</h3>\n\n    <div class=\"list-group\">\n        <a v-for=\"resource in resources\" href=\"{{ resource.link }}\" target=\"_blank\" class=\"list-group-item\">\n            <strong>{{ resource.name }}</strong> - {{ resource.short_description }}\n        </a>\n    </div>\n\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n\n    <h3 v-if=\"!category\" class=\"blue-grey-text\">Last awesome resources added:</h3>\n    <h3 v-else=\"\" class=\"blue-grey-text\">Awesome resources from {{ category | lowercase }} category:</h3>\n\n    <div class=\"list-group\">\n        <a v-for=\"resource in resources\" href=\"{{ resource.link }}\" target=\"_blank\" class=\"list-group-item\">\n            <strong>{{ resource.name }}</strong> - {{ resource.short_description }}\n        </a>\n    </div>\n\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -23632,7 +23765,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":31,"vue-hot-reload-api":6}],38:[function(require,module,exports){
+},{"vue":31,"vue-hot-reload-api":6}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

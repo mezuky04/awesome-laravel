@@ -16,12 +16,14 @@ Vue.config.debug = true;
 import Login from './components/Login.vue';
 import SubmitResource from './components/SubmitResource.vue';
 import Resources from './components/Resources.vue';
+import AdminCenter from './components/AdminCenter.vue';
 
 new Vue({
     el: '#app',
     components: {
         'login': Login,
         'submit-resource': SubmitResource,
-        'resources': Resources
+        'resources': Resources,
+        'admin-center': AdminCenter,
     }
 });

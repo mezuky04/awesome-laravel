@@ -13,10 +13,9 @@ Route::post('/login', 'LoginController@login')->middleware('guest');
 
 Route::get('/logout', 'LoginController@logout')->middleware('auth');
 
-//Route::auth();
-
-//Route::get('/home', 'HomeController@index');
-
-//Route::auth();
-
-//Route::get('/home', 'HomeController@index');
+Route::group(['prefix' => 'admin-center', 'namespace' => 'AdminCenter'], function() {
+    Route::get('/', 'AdminCenterController@index')->middleware('auth');
+    Route::get('/get-pending-requests', 'AdminCenterController@getPendingRequests')->middleware('auth');
+    Route::get('/accept-resource-request/{resourceId}', 'AdminCenterController@acceptResourceRequest')->middleware('auth');
+    Route::get('/decline-resource-request/{resourceId}', 'AdminCenterController@declineResourceRequest')->middleware('auth');
+});

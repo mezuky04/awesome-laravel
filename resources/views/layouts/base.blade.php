@@ -7,7 +7,7 @@
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <!--[if lt IE 9]>
@@ -20,13 +20,15 @@
     <!-- BEGIN Header -->
     <div id="header">
 
+        @if (!isset($smallHeader))
         <div class="container-fluid header">
-
             <div class="container">
                 @yield('header-content')
             </div>
-
         </div>
+        @else
+            @include('layouts.partials.navbar')
+        @endif
 
     </div>
     <!-- END Header -->
@@ -44,7 +46,7 @@
     <!-- BEGIN Footer -->
     <div id="footer">
         <div class="container text-center">
-            <span class="footer-text">Created with &hearts; by <a href="#">Alex</a> - Source code available on <a href="#">GitHub</a></span>
+            <span class="footer-text">Created with &hearts; by <a href="#">Alex</a>. Source code available on <a href="#">GitHub</a>.</span>
         </div>
     </div>
     <!-- END Footer -->

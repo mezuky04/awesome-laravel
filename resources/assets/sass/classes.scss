@@ -58,3 +58,10 @@
 .center-responsive-image {
   margin: 0 auto;
 }
+
+/**
+ * Allow vertical align in tables.
+ */
+.table tbody>tr>td.vert-align{
+  vertical-align: middle;
+}
