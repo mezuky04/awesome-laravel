@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf0bb24-a13b-4610-b449-480dcb3b9510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js.map" afterPath="$PROJECT_DIR$/public/js/app.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/app.js" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/classes.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/classes.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php" />
     </list>
     <ignored path="awesome-laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,14 +23,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ResourcesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php">
+      <file leaf-file-name="ResourceCategoriesTableSeeder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="832">
+              <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +82,6 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/colors.scss" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/big-header-layout.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/pages/submit-resource.scss" />
         <option value="$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php" />
@@ -125,6 +112,7 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/PendingRequests.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -626,12 +614,12 @@
       <workItem from="1459398441944" duration="18246000" />
       <workItem from="1459484493943" duration="25137000" />
       <workItem from="1459536989120" duration="2977000" />
-      <workItem from="1459572594651" duration="15560000" />
+      <workItem from="1459572594651" duration="15972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79935000" />
+    <option name="totallyTimeSpent" value="80347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -811,13 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1312,8 +1293,25 @@
         <state relative-caret-position="676">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
+            <marker date="1459595133877" expanded="true" signature="44:92" placeholder="..." />
+            <marker date="1459595133877" expanded="true" signature="97:193" placeholder=" Handle work with resources. ..." />
+            <marker date="1459595133877" expanded="true" signature="242:955" placeholder="..." />
+            <marker date="1459595133877" expanded="true" signature="251:358" placeholder=" Get all resources for given category. ..." />
+            <marker date="1459595133877" expanded="true" signature="410:726" placeholder="..." />
+            <marker date="1459595133877" expanded="true" signature="567:608" placeholder="..." />
+            <marker date="1459595133877" expanded="true" signature="630:645" placeholder="..." />
+            <marker date="1459595133877" expanded="true" signature="669:699" placeholder="..." />
+            <marker date="1459595133877" expanded="true" signature="736:803" placeholder=" Get last resources added. ..." />
+            <marker date="1459595133877" expanded="true" signature="846:948" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
