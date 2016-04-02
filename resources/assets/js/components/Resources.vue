@@ -1,31 +1,66 @@
 <template>
-    <div class="row">
 
-        <div class="col-md-4 col-md-offset-4 text-center">
-            <h3 class="blue-grey-text">Choose a category</h3>
-            <select class="selectpicker" data-style="btn-ghost-inverse">
-                <option>Mustard</option>
-                <option>Ketchup</option>
-                <option>Relish</option>
-                <option>Relish</option>
-                <option>Relish</option>
-            </select>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <h3 class="blue-grey-text">Last resources added</h3>
-        <div class="list-group">
-            <a href="#" class="list-group-item"><strong>First item</strong> - short resource description goes here</a>
-            <a href="#" class="list-group-item">Second item</a>
-            <a href="#" class="list-group-item">Third item</a>
-        </div>
-    </div>
+    <choose-category></choose-category>
+    <resources-list v-bind:resources="resources" v-bind:category="selectedCategory"></resources-list>
+    <loader v-show="loading"></loader>
+    
 </template>
 
 <script>
+
+    import ChooseCategory from '../components/ChooseCategory.vue';
+    import ResourcesList from '../components/ResourcesList.vue';
+    import Loader from '../components/Loader.vue';
+
     export default {
-        
+
+        data: function() {
+            return {
+                resources: [],
+                loading: false,
+                showLastResources: true,
+                selectedCategory: ''
+            };
+        },
+
+        components: {
+            'choose-category': ChooseCategory,
+            'resources-list': ResourcesList,
+            'loader': Loader
+        },
+
+        /**
+         * Called on ready.
+         */
+        ready: function() {
+            this.loadResources();
+        },
+
+        events: {
+            'category-changed': function(category) {
+                this.loadResources(category);
+            }
+        },
+
+        methods: {
+            loadResources: function(category) {
+                var vn = this;
+                this.selectedCategory = category;
+                this.showLastResources = false;
+
+                // Set url used in request
+                var url = '/get-resources';
+                if (typeof category !== 'undefined') {
+                    url = url + '/' + category;
+                }
+
+                // Make get request
+                this.$http.get(url).then(function(success) {
+                    vn.resources = success.data;
+                }, function(error) {
+                    //
+                });
+            }
+        }
     }
 </script>

@@ -23345,8 +23345,13 @@ var _SubmitResource = require('./components/SubmitResource.vue');
 
 var _SubmitResource2 = _interopRequireDefault(_SubmitResource);
 
+var _Resources = require('./components/Resources.vue');
+
+var _Resources2 = _interopRequireDefault(_Resources);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// jQuery and Vue
 window.jQuery = require('jquery');
 var Vue = require('vue');
 
@@ -23364,11 +23369,93 @@ Vue.config.debug = true;
 new Vue({
     el: '#app',
     components: {
-        Login: _Login2.default, SubmitResource: _SubmitResource2.default
+        'login': _Login2.default,
+        'submit-resource': _SubmitResource2.default,
+        'resources': _Resources2.default
     }
 });
 
-},{"../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js":1,"../../../node_modules/sweetalert/dist/sweetalert.min.js":5,"./components/Login.vue":33,"./components/SubmitResource.vue":34,"bootstrap-select":2,"jquery":3,"vue":31,"vue-resource":20}],33:[function(require,module,exports){
+},{"../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js":1,"../../../node_modules/sweetalert/dist/sweetalert.min.js":5,"./components/Login.vue":35,"./components/Resources.vue":36,"./components/SubmitResource.vue":38,"bootstrap-select":2,"jquery":3,"vue":31,"vue-resource":20}],33:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+
+    data: function data() {
+        return {
+            loading: false,
+            selectedCategory: '',
+            categories: [],
+            error: ''
+        };
+    },
+
+    ready: function ready() {
+        this.loadCategories();
+    },
+
+    methods: {
+        loadCategories: function loadCategories() {
+
+            this.loading = true;
+            var vn = this;
+
+            // Make request to get categories
+            this.$http.get('/get-categories').then(function (success) {
+                vn.loading = false;
+                vn.categories = success.data;
+                setTimeout(function () {
+                    jQuery('.pick-category').selectpicker();
+                }, 100);
+            }, function (error) {
+                vn.loading = false;
+                vn.error = 'An error occurred. Refresh the page and try again.';
+            });
+        },
+
+        categoryChanged: function categoryChanged() {
+            var vn = this;
+            this.$dispatch('category-changed', vn.selectedCategory);
+        }
+    }
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\" v-show=\"!loading\">\n    <div class=\"col-md-4 col-md-offset-4 text-center\">\n        <h3 class=\"blue-grey-text\">Choose a category</h3>\n        <select @change=\"categoryChanged\" v-model=\"selectedCategory\" class=\"pick-category\" data-style=\"btn-ghost-inverse\">\n            <option selected=\"selected\" disabled=\"disabled\">Nothing selected</option>\n            <option v-for=\"category in categories\" v-bind:value=\"category.name\">{{ category.name }}</option>\n        </select>\n    </div>\n\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/awesome-laravel/resources/assets/js/components/ChooseCategory.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":31,"vue-hot-reload-api":6}],34:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n    <img src=\"/img/loader.svg\">\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/awesome-laravel/resources/assets/js/components/Loader.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":31,"vue-hot-reload-api":6}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23438,7 +23525,114 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":31,"vue-hot-reload-api":6}],34:[function(require,module,exports){
+},{"vue":31,"vue-hot-reload-api":6}],36:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _ChooseCategory = require('../components/ChooseCategory.vue');
+
+var _ChooseCategory2 = _interopRequireDefault(_ChooseCategory);
+
+var _ResourcesList = require('../components/ResourcesList.vue');
+
+var _ResourcesList2 = _interopRequireDefault(_ResourcesList);
+
+var _Loader = require('../components/Loader.vue');
+
+var _Loader2 = _interopRequireDefault(_Loader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+    data: function data() {
+        return {
+            resources: [],
+            loading: false,
+            showLastResources: true,
+            selectedCategory: ''
+        };
+    },
+
+    components: {
+        'choose-category': _ChooseCategory2.default,
+        'resources-list': _ResourcesList2.default,
+        'loader': _Loader2.default
+    },
+
+    /**
+     * Called on ready.
+     */
+    ready: function ready() {
+        this.loadResources();
+    },
+
+    events: {
+        'category-changed': function categoryChanged(category) {
+            this.loadResources(category);
+        }
+    },
+
+    methods: {
+        loadResources: function loadResources(category) {
+            var vn = this;
+            this.selectedCategory = category;
+            this.showLastResources = false;
+
+            // Set url used in request
+            var url = '/get-resources';
+            if (typeof category !== 'undefined') {
+                url = url + '/' + category;
+            }
+
+            // Make get request
+            this.$http.get(url).then(function (success) {
+                vn.resources = success.data;
+            }, function (error) {
+                //
+            });
+        }
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<choose-category></choose-category>\n<resources-list v-bind:resources=\"resources\" v-bind:category=\"selectedCategory\"></resources-list>\n<loader v-show=\"loading\"></loader>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/awesome-laravel/resources/assets/js/components/Resources.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../components/ChooseCategory.vue":33,"../components/Loader.vue":34,"../components/ResourcesList.vue":37,"vue":31,"vue-hot-reload-api":6}],37:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: ['resources', 'category']
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n\n    <h3 v-if=\"!category\" class=\"blue-grey-text\">Last awesome resources added:</h3>\n    <h3 v-else=\"\" class=\"blue-grey-text\">Awesome esources from {{ category | lowercase }} category:</h3>\n\n    <div class=\"list-group\">\n        <a v-for=\"resource in resources\" href=\"{{ resource.link }}\" target=\"_blank\" class=\"list-group-item\">\n            <strong>{{ resource.name }}</strong> - {{ resource.short_description }}\n        </a>\n    </div>\n\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/awesome-laravel/resources/assets/js/components/ResourcesList.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":31,"vue-hot-reload-api":6}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23560,7 +23754,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row submit-resource\">\n    <div class=\"col-md-8 col-md-offset-2\">\n\n        <div v-show=\"done\" class=\"alert alert-success\">Success! Your resource was sent and is waiting for approval. You will receive an email soon.</div>\n\n        <div v-show=\"!done\">\n            <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n\n            <!-- BEGIN Resource category -->\n            <div v-show=\"loadingResourceCategories\">\n                <img src=\"/img/loader.svg\">\n            </div>\n            <div v-show=\"!loadingResourceCategories &amp;&amp; categories\" class=\"form-group\">\n                <label>Choose resource category:</label>\n                <br>\n                <select id=\"selectpicker\" v-model=\"categoryId\" data-style=\"selectStyle\">\n                    <option selected=\"selected\" disabled=\"disabled\">Nothing selected</option>\n                    <option v-for=\"category in categories\" value=\"{{ category.id }}\">{{ category.name }}</option>\n                </select>\n                <br>\n                <span class=\"text-danger\" v-show=\"errors.category_id\">{{ errors.category_id }}</span>\n            </div>\n            <!-- END Resource category -->\n\n            <!-- BEGIN Resource name -->\n            <div class=\"form-group\">\n                <label for=\"resource-name\">Resource name:</label>\n                <input v-model=\"resourceName\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_name }\" type=\"text\" id=\"resource-name\" class=\"form-control custom-input\" placeholder=\"Example: Laracasts\" autocomplete=\"off\">\n                <span class=\"text-danger\" v-show=\"errors.resource_name\">{{ errors.resource_name }}</span>\n            </div>\n            <!-- END Resource name -->\n\n            <!-- BEGIN Short resource description -->\n            <div class=\"form-group\">\n                <label for=\"short-resource-description\">Short resource description:</label>\n                <input v-model=\"shortResourceDescription\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.short_resource_description }\" type=\"text\" id=\"short-resource-description\" class=\"form-control custom-input\" placeholder=\"Example: Learn practical, modern web development, through expert screencasts.\">\n                <span class=\"text-danger\" v-show=\"errors.short_resource_description\">{{ errors.short_resource_description }}</span>\n            </div>\n            <!-- END Short resource description -->\n\n            <!-- BEGIN Resource link -->\n            <div class=\"form-group\">\n                <label for=\"resource-link\">Resource link:</label>\n                <input v-model=\"resourceLink\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_link }\" type=\"text\" id=\"resource-link\" class=\"form-control custom-input\" placeholder=\"https://laracasts.com\">\n                <span class=\"text-danger\" v-show=\"errors.resource_link\">{{ errors.resource_link }}</span>\n            </div>\n            <!-- END Resource link -->\n\n            <!-- BEGIN Your email -->\n            <div class=\"form-group\">\n                <label for=\"your-email\">Your email:</label>\n                <input v-model=\"yourEmail\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.your_email }\" type=\"email\" id=\"your-email\" class=\"form-control custom-input\" placeholder=\"john.doe@example.com\">\n                <span class=\"text-danger\" v-show=\"errors.your_email\">{{ errors.your_email }}</span>\n            </div>\n            <!-- END Your email -->\n\n            <!-- BEGIN Submit resource -->\n            <div class=\"btn btn-block btn-ghost-inverse\" @click=\"submit\">Share resource with others</div>\n            <!-- END Submit resource -->\n        </div>\n    </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row submit-resource\">\n    <div class=\"col-md-8 col-md-offset-2\">\n\n        <div v-show=\"done\" class=\"alert alert-success\">Success! Your resource was sent and is waiting for approval. You will receive an email soon.</div>\n\n        <div v-show=\"!done\">\n            <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n\n            <!-- BEGIN Resource category -->\n            <div v-show=\"loadingResourceCategories\">\n                <img src=\"/img/loader.svg\">\n            </div>\n            <div v-show=\"!loadingResourceCategories &amp;&amp; categories\" class=\"form-group\">\n                <label>Choose resource category:</label>\n                <br>\n                <select id=\"selectpicker\" v-model=\"categoryId\" v-bind:data-style=\"selectStyle\">\n                    <option selected=\"selected\" disabled=\"disabled\">Nothing selected</option>\n                    <option v-for=\"category in categories\" value=\"{{ category.id }}\">{{ category.name }}</option>\n                </select>\n                <br>\n                <span class=\"text-danger\" v-show=\"errors.category_id\">{{ errors.category_id }}</span>\n            </div>\n            <!-- END Resource category -->\n\n            <!-- BEGIN Resource name -->\n            <div class=\"form-group\">\n                <label for=\"resource-name\">Resource name:</label>\n                <input v-model=\"resourceName\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_name }\" type=\"text\" id=\"resource-name\" class=\"form-control custom-input\" placeholder=\"Example: Laracasts\" autocomplete=\"off\">\n                <span class=\"text-danger\" v-show=\"errors.resource_name\">{{ errors.resource_name }}</span>\n            </div>\n            <!-- END Resource name -->\n\n            <!-- BEGIN Short resource description -->\n            <div class=\"form-group\">\n                <label for=\"short-resource-description\">Short resource description:</label>\n                <input v-model=\"shortResourceDescription\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.short_resource_description }\" type=\"text\" id=\"short-resource-description\" class=\"form-control custom-input\" placeholder=\"Example: Learn practical, modern web development, through expert screencasts.\">\n                <span class=\"text-danger\" v-show=\"errors.short_resource_description\">{{ errors.short_resource_description }}</span>\n            </div>\n            <!-- END Short resource description -->\n\n            <!-- BEGIN Resource link -->\n            <div class=\"form-group\">\n                <label for=\"resource-link\">Resource link:</label>\n                <input v-model=\"resourceLink\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.resource_link }\" type=\"text\" id=\"resource-link\" class=\"form-control custom-input\" placeholder=\"https://laracasts.com\">\n                <span class=\"text-danger\" v-show=\"errors.resource_link\">{{ errors.resource_link }}</span>\n            </div>\n            <!-- END Resource link -->\n\n            <!-- BEGIN Your email -->\n            <div class=\"form-group\">\n                <label for=\"your-email\">Your email:</label>\n                <input v-model=\"yourEmail\" @keyup.enter=\"submit\" v-bind:class=\"{ 'custom-error': errors.your_email }\" type=\"email\" id=\"your-email\" class=\"form-control custom-input\" placeholder=\"john.doe@example.com\">\n                <span class=\"text-danger\" v-show=\"errors.your_email\">{{ errors.your_email }}</span>\n            </div>\n            <!-- END Your email -->\n\n            <!-- BEGIN Submit resource -->\n            <div class=\"btn btn-block btn-ghost-inverse\" @click=\"submit\">Share resource with others</div>\n            <!-- END Submit resource -->\n        </div>\n    </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

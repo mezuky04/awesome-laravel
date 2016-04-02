@@ -5,6 +5,8 @@ Route::get('/submit-resource', 'SubmitResourceController@index');
 Route::post('/submit-resource', 'SubmitResourceController@submitResource');
 
 Route::get('/get-categories', 'SubmitResourceController@getCategories');
+Route::get('/get-resources/{categoryName}', 'ResourcesController@getResources');
+Route::get('/get-resources', 'ResourcesController@getLastResources');
 
 Route::get('/login', 'LoginController@index')->middleware('guest');
 Route::post('/login', 'LoginController@login')->middleware('guest');

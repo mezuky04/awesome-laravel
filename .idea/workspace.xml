@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf0bb24-a13b-4610-b449-480dcb3b9510" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js.map" afterPath="$PROJECT_DIR$/public/js/app.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/app.js" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/Resources.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/Resources.vue" />
     </list>
     <ignored path="awesome-laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Resources.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Resources.vue">
+      <file leaf-file-name="ResourcesList.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/ResourcesList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="104">
+              <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -56,6 +56,10 @@
     <setting file="file://$PROJECT_DIR$/resources/assets/js/components/Resources.vue" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/assets/js/components/Login.vue" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/node_modules/vue-strap/src/Select.vue" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/js/components/ChooseCategory.vue" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/js/components/LastResources.vue" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/js/components/Loader.vue" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/js/components/ResourcesList.vue" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -84,7 +88,6 @@
         <option value="$PROJECT_DIR$/app/Resource.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_31_044812_create_resources_table.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/colors.scss" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/ResourceCategoriesTableSeeder.php" />
@@ -94,12 +97,18 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php" />
         <option value="$PROJECT_DIR$/node_modules/vue-strap/src/Select.vue" />
-        <option value="$PROJECT_DIR$/resources/assets/js/app.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/classes.scss" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/SubmitResource.vue" />
         <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/LastResources.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/ChooseCategory.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Loader.vue" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/Resources.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/ResourcesList.vue" />
       </list>
     </option>
   </component>
@@ -547,12 +556,12 @@
       <workItem from="1459398441944" duration="18246000" />
       <workItem from="1459484493943" duration="25137000" />
       <workItem from="1459536989120" duration="2977000" />
-      <workItem from="1459572594651" duration="375000" />
+      <workItem from="1459572594651" duration="6327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64750000" />
+    <option name="totallyTimeSpent" value="70702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -594,41 +603,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -679,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-474">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/ball.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -698,6 +665,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,6 +702,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="116" column="26" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="26" />
+          <folding>
+            <marker date="1459258378000" expanded="false" signature="56:243" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="268:4792" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="278:340" placeholder=" The default error bag. ..." />
+            <marker date="1459258378000" expanded="true" signature="392:619" placeholder=" Run the validation routine against the given validator. ..." />
+            <marker date="1459258378000" expanded="true" signature="691:1001" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="781:881" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="918:994" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="1010:1250" placeholder=" Validate the given request with the given rules. ..." />
+            <marker date="1459258378000" expanded="true" signature="1365:1603" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="1520:1596" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="1612:1961" placeholder=" Validate the given request with the given rules. ..." />
+            <marker date="1459258378000" expanded="true" signature="2094:2301" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="2129:2293" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="2206:2292" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="2310:2585" placeholder=" Throw the failed validation exception. ..." />
+            <marker date="1459258378000" expanded="true" signature="2665:2841" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="2759:2832" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="2850:3048" placeholder=" Create the response for when a request fails validation. ..." />
+            <marker date="1459258378000" expanded="true" signature="3136:3467" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="3223:3283" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="3377:3394" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="3433:3459" placeholder="..." />
+            <marker date="1459258378000" expanded="true" signature="3476:3632" placeholder=" Format the validation errors to be returned. ..." />
+            <marker date="1459258378000" expanded="true" signature="3702:3766" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="3775:3852" placeholder=" Get the URL we should redirect to. ..." />
+            <marker date="1459258378000" expanded="true" signature="3894:3959" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="3968:4079" placeholder=" Get a validation factory instance. ..." />
+            <marker date="1459258378000" expanded="true" signature="4127:4175" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="4184:4364" placeholder=" Execute a Closure within with a given error bag set as the default bag. ..." />
+            <marker date="1459258378000" expanded="true" signature="4433:4583" placeholder="{...}" />
+            <marker date="1459258378000" expanded="true" signature="4592:4681" placeholder=" Get the key to be used for the view error bag. ..." />
+            <marker date="1459258378000" expanded="true" signature="4717:4790" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -762,6 +764,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <marker date="1459485012023" expanded="true" signature="67:151" placeholder=" Resource model. ..." />
+            <marker date="1459485012023" expanded="true" signature="184:223" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -783,13 +789,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="72" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
+          <folding>
+            <marker date="1459403380180" expanded="true" signature="104:142" placeholder="{...}" />
+            <marker date="1459403380180" expanded="true" signature="164:199" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,13 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_31_044812_create_resources_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -924,13 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -949,30 +938,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="852">
           <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/SubmitResource.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3146">
-          <caret line="121" column="27" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding>
-            <marker date="1459539847544" expanded="true" signature="0:3654" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="15:3113" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="57:2535" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="268:1811" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="436:549" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="566:1226" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="722:1203" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="747:1072" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="1093:1203" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="1336:1678" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="1930:2376" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="2654:2980" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="3216:3527" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="3956:7554" placeholder="&lt;xml/&gt;" />
-            <marker date="1459539847544" expanded="true" signature="4966:5021" placeholder="/** Load all categories. ...*/" />
-            <marker date="1459539847544" expanded="true" signature="6227:6278" placeholder="/** Submit resource. ...*/" />
+            <marker date="1459539576880" expanded="true" signature="12:33" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="51:72" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="80:121" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="134:260" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="316:404" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="425:540" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="594:746" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="769:886" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="915:946" placeholder="{...}" />
+            <marker date="1459539576880" expanded="true" signature="1004:1156" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1026,10 +1002,177 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1458934188000" expanded="true" signature="113:1462" placeholder="{...}" />
+            <marker date="1458934188000" expanded="true" signature="123:290" placeholder=" The application's global HTTP middleware stack. ..." />
+            <marker date="1458934188000" expanded="true" signature="322:406" placeholder="..." />
+            <marker date="1458934188000" expanded="true" signature="417:498" placeholder=" The application's route middleware groups. ..." />
+            <marker date="1458934188000" expanded="true" signature="536:956" placeholder="..." />
+            <marker date="1458934188000" expanded="true" signature="555:889" placeholder="..." />
+            <marker date="1458934188000" expanded="true" signature="911:949" placeholder="..." />
+            <marker date="1458934188000" expanded="true" signature="967:1120" placeholder=" The application's route middleware. ..." />
+            <marker date="1458934188000" expanded="true" signature="1157:1458" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <marker date="1459573363538" expanded="true" signature="453:603" placeholder="..." />
+            <marker date="1459573363538" expanded="true" signature="613:754" placeholder="{&quot;el&quot;: '#app'...}" />
+            <marker date="1459573363538" expanded="true" signature="647:752" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/SubmitResource.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3146">
+          <caret line="121" column="60" selection-start-line="121" selection-start-column="60" selection-end-line="121" selection-end-column="60" />
+          <folding>
+            <marker date="1459539847544" expanded="true" signature="0:3654" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="15:3113" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="57:2535" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="268:1811" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="436:549" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="566:1226" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="722:1203" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="747:1072" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="1093:1203" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="1336:1678" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="1930:2376" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="2654:2980" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="3216:3527" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="3956:7554" placeholder="&lt;xml/&gt;" />
+            <marker date="1459539847544" expanded="true" signature="4966:5021" placeholder="/** Load all categories. ...*/" />
+            <marker date="1459539847544" expanded="true" signature="6227:6278" placeholder="/** Submit resource. ...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Loader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding>
+            <marker date="1459575860766" expanded="true" signature="0:93" placeholder="&lt;xml/&gt;" />
+            <marker date="1459575860766" expanded="true" signature="15:81" placeholder="&lt;xml/&gt;" />
+            <marker date="1459575860766" expanded="true" signature="123:139" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/ChooseCategory.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <folding>
+            <marker date="1459575408706" expanded="true" signature="0:550" placeholder="&lt;xml/&gt;" />
+            <marker date="1459575408706" expanded="true" signature="15:538" placeholder="&lt;xml/&gt;" />
+            <marker date="1459575408706" expanded="true" signature="59:523" placeholder="&lt;xml/&gt;" />
+            <marker date="1459575408706" expanded="true" signature="592:1745" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="628:802" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="649:792" placeholder="{&quot;loading&quot;: false...}" />
+            <marker date="1459575408706" expanded="true" signature="831:877" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="897:1730" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="938:1558" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="1133:1380" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="1267:1355" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="1398:1542" placeholder="{...}" />
+            <marker date="1459575408706" expanded="true" signature="1601:1720" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/LastResources.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
+          <folding>
+            <marker date="1459574541326" expanded="true" signature="0:410" placeholder="&lt;xml/&gt;" />
+            <marker date="1459574541326" expanded="true" signature="15:398" placeholder="&lt;xml/&gt;" />
+            <marker date="1459574541326" expanded="true" signature="102:387" placeholder="&lt;xml/&gt;" />
+            <marker date="1459574541326" expanded="true" signature="440:456" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+          <folding>
+            <marker date="1459579071526" expanded="true" signature="44:92" placeholder="..." />
+            <marker date="1459579071526" expanded="true" signature="97:193" placeholder=" Handle work with resources. ..." />
+            <marker date="1459579071526" expanded="true" signature="242:646" placeholder="..." />
+            <marker date="1459579071526" expanded="true" signature="293:518" placeholder="..." />
+            <marker date="1459579071526" expanded="true" signature="450:491" placeholder="..." />
+            <marker date="1459579071526" expanded="true" signature="561:639" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_31_044812_create_resources_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <marker date="1459513329462" expanded="false" signature="11:94" placeholder="..." />
+            <marker date="1459513329462" expanded="true" signature="99:190" placeholder=" Create resources table. ..." />
+            <marker date="1459513329462" expanded="true" signature="239:1087" placeholder="..." />
+            <marker date="1459513329462" expanded="true" signature="248:308" placeholder=" Run the migrations. ..." />
+            <marker date="1459513329462" expanded="true" signature="337:932" placeholder="..." />
+            <marker date="1459513329462" expanded="true" signature="361:925" placeholder="..." />
+            <marker date="1459513329462" expanded="true" signature="402:924" placeholder="..." />
+            <marker date="1459513329462" expanded="true" signature="942:1006" placeholder=" Reverse the migrations. ..." />
+            <marker date="1459513329462" expanded="true" signature="1037:1085" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Resources.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="832">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <marker date="1459579791582" expanded="true" signature="0:209" placeholder="&lt;xml/&gt;" />
+            <marker date="1459579791582" expanded="true" signature="232:403" placeholder="..." />
+            <marker date="1459579791582" expanded="true" signature="424:1728" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="452:640" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="473:629" placeholder="{&quot;loading&quot;: false...}" />
+            <marker date="1459579791582" expanded="true" signature="663:795" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="806:849" placeholder="/** Called on ready. ...*/" />
+            <marker date="1459579791582" expanded="true" signature="876:921" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="940:1064" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="993:1054" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="1084:1722" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="1132:1712" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="1404:1471" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="1568:1636" placeholder="{...}" />
+            <marker date="1459579791582" expanded="true" signature="1654:1696" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/ResourcesList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
           <folding />
         </state>
       </provider>

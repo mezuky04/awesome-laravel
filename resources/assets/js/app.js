@@ -1,3 +1,4 @@
+// jQuery and Vue
 window.jQuery = require('jquery');
 var Vue = require('vue');
 
@@ -14,10 +15,13 @@ Vue.config.debug = true;
 
 import Login from './components/Login.vue';
 import SubmitResource from './components/SubmitResource.vue';
+import Resources from './components/Resources.vue';
 
 new Vue({
     el: '#app',
     components: {
-        Login, SubmitResource
+        'login': Login,
+        'submit-resource': SubmitResource,
+        'resources': Resources
     }
 });
