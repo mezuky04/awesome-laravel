@@ -76,6 +76,12 @@ class ResourcesTableSeeder extends Seeder {
             ], 'Videos' => [
                 'checked' => true,
                 'resource_category_id' => \App\ResourceCategory::where('name', 'Videos')->first()->id
+            ], 'Conferences' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Conferences')->first()->id
+            ], 'Books' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Books')->first()->id
             ]
         ];
 
@@ -781,6 +787,154 @@ class ResourcesTableSeeder extends Seeder {
                     'name' => 'Laracademy',
                     'link' => 'https://laracademy.co/',
                     'short_description' => 'Laravel video tutorials'
+                ]
+            ], 'Conferences' => [
+                [
+                    'name' => 'Laracon US',
+                    'link' => 'http://laracon.us/',
+                    'short_description' => 'Laravel United States conference'
+                ], [
+                    'name' => 'Laracon EU',
+                    'link' => 'http://laracon.eu/',
+                    'short_description' => 'Laravel Europe conference',
+                ], [
+                    'name' => 'ArtisanConf',
+                    'link' => 'https://www.artisanconf.com/',
+                    'short_description' => 'For Laravel and PHP enthusiasts'
+                ]
+            ], 'Books' => [
+                [
+                    'name' => 'Laravel Starter',
+                    'link' => 'https://www.packtpub.com/web-development/laravel-starter-instant',
+                    'short_description' => 'by Shawn McCool'
+                ], [
+                    'name' => 'Laravel: Code Happy',
+                    'link' => 'https://leanpub.com/codehappy',
+                    'short_description' => 'by Dayle Rees'
+                ], [
+                    'name' => 'Laravel: Code Bright',
+                    'link' => 'https://leanpub.com/codebright',
+                    'short_description' => 'by Dayle Rees'
+                ], [
+                    'name' => 'Laravel: From Apprentice to Artisan',
+                    'link' => 'https://leanpub.com/laravel',
+                    'short_description' => 'by Tailor Otwell'
+                ], [
+                    'name' => 'Laravel Cookbook',
+                    'link' => 'https://leanpub.com/laravel4cookbook',
+                    'short_description' => 'by Christopher Pitt and Taylor Otwell'
+                ], [
+                    'name' => 'Laravel Testing Decoded',
+                    'link' => 'https://leanpub.com/laravel-testing-decoded',
+                    'short_description' => 'by Jeffrey Way'
+                ], [
+                    'name' => 'Implementing Laravel',
+                    'link' => 'https://leanpub.com/implementinglaravel',
+                    'short_description' => 'by Chris Fidao'
+                ], [
+                    'name' => 'Getting Stuff Done with Laravel 4',
+                    'link' => 'https://leanpub.com/gettingstuffdonelaravel',
+                    'short_description' => 'by Chuck Heintzelman'
+                ], [
+                    'name' => 'Laravel Application Development Blueprints',
+                    'link' => 'http://www.packtpub.com/web-development/laravel-application-development-blueprints',
+                    'short_description' => 'by Arda Kılıçdağı and Halil İbrahim Yılmaz'
+                ], [
+                    'name' => 'Build APIs You Won\'t Hate',
+                    'link' => 'https://leanpub.com/build-apis-you-wont-hate',
+                    'short_description' => 'by Phil Sturgeon'
+                ], [
+                    'name' => 'Integrating Frond end Components with Web Applications',
+                    'link' => 'https://leanpub.com/frontend',
+                    'short_description' => 'by Maksim Surguy'
+                ], [
+                    'name' => 'Laravel Design Patterns and Best Practices',
+                    'link' => 'http://www.packtpub.com/web-development/laravel-design-patterns-and-best-practices',
+                    'short_description' => 'by Arda Kılıçdağı and Halil İbrahim Yılmaz'
+                ], [
+                    'name' => 'Step by Step Real World Application with Laravel 4',
+                    'link' => 'https://leanpub.com/real-world-laravel4',
+                    'short_description' => 'by Ibrahim Yusuf'
+                ], [
+                    'name' => 'Learning Laravel 4 Application Development',
+                    'link' => 'http://www.packtpub.com/web-development/learning-laravel-4-application-development',
+                    'short_description' => 'by Hardik Dangar'
+                ], [
+                    'name' => 'Getting Started with Laravel 4',
+                    'link' => 'http://www.packtpub.com/web-development/getting-started-laravel-4',
+                    'short_description' => 'by Raphaël Saunier'
+                ], [
+                    'name' => 'Laravel Application Development Cookbook',
+                    'link' => 'http://www.packtpub.com/web-development/laravel-application-development-cookbook',
+                    'short_description' => 'by Terry Matula'
+                ], [
+                    'name' => 'Building Web Applications using Parse REST API',
+                    'link' => 'https://leanpub.com/building-web-applications-using-parse-rest-api',
+                    'short_description' => 'by Mhd Zaher Ghaibeh'
+                ], [
+                    'name' => 'Laravel - My First Framework',
+                    'link' => 'https://leanpub.com/laravel-first-framework',
+                    'short_description' => 'by Maksim Surguy'
+                ], [
+                    'name' => 'Easy Laravel 5',
+                    'link' => 'https://leanpub.com/easylaravel/',
+                    'short_description' => 'by W. Jason Gilmore'
+                ], [
+                    'name' => 'Laravel 5 Essentials',
+                    'link' => 'https://www.packtpub.com/web-development/laravel-5-essentials',
+                    'short_description' => 'by Martin Bean'
+                ], [
+                    'name' => 'Easy E-Commerce Using Laravel and Stripe',
+                    'link' => 'https://leanpub.com/easyecommerce',
+                    'short_description' => 'by W. Jason Gilmore and Eric L. Barnes'
+                ], [
+                    'name' => 'Laravel 5.1 Beauty',
+                    'link' => 'https://leanpub.com/l5-beauty',
+                    'short_description' => 'by Chuck Heintzelman'
+                ], [
+                    'name' => 'Design Patterns with PHP and Laravel',
+                    'link' => 'https://leanpub.com/larasign',
+                    'short_description' => 'by Kelt Dockins'
+                ], [
+                    'name' => 'Laravel 5 Learn Easy',
+                    'link' => 'https://leanpub.com/laravel5learneasy',
+                    'short_description' => 'by Sanjib Sinha'
+                ], [
+                    'name' => 'Mastering Laravel',
+                    'link' => 'https://www.packtpub.com/web-development/mastering-laravel',
+                    'short_description' => 'by Christopher John Pecoraro'
+                ], [
+                    'name' => 'How to Build Real-Time Laravel Apps with Pusher',
+                    'link' => 'http://pusher-community.github.io/real-time-laravel/',
+                    'short_description' => 'by Pusher'
+                ], [
+                    'name' => 'Learning Laravel\'s Eloquent',
+                    'link' => 'https://www.packtpub.com/web-development/learning-laravel%E2%80%99s-eloquent',
+                    'short_description' => 'by Francesco Malatesta'
+                ], [
+                    'name' => 'Laravel and AngularJS',
+                    'link' => 'https://leanpub.com/laravel-and-angularjs',
+                    'short_description' => 'by Daniel Schmitz and Daniel Pedrinha Georgii'
+                ], [
+                    'name' => 'Laravel 5 UnFolded',
+                    'link' => 'http://www.amazon.com/Laravel-UnFolded-Application-Programming-Simplified-ebook/dp/B011I0DVWO/',
+                    'short_description' => 'by Sanjib Sinha'
+                ], [
+                    'name' => 'Laravel Collections Unraveled',
+                    'link' => 'https://leanpub.com/laravelcollectionsunraveled',
+                    'short_description' => 'by Jeff Madsen'
+                ], [
+                    'name' => 'Writing APIs With Lumen',
+                    'link' => 'https://leanpub.com/lumen-apis',
+                    'short_description' => 'by Paul Redmond'
+                ], [
+                    'name' => 'The Laravel Survival Guide',
+                    'link' => 'https://leanpub.com/laravelsurvivalguide',
+                    'short_description' => 'by Tony Lea'
+                ], [
+                    'name' => 'Laraboot: Laravel 5 For Beginners',
+                    'link' => 'https://leanpub.com/laravel-5-for-beginners-laraboot',
+                    'short_description' => 'by Bill Keck'
                 ]
             ]
         ];
