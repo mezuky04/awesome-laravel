@@ -23750,10 +23750,21 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    props: ['resources', 'category']
+
+    props: ['resources', 'category'],
+
+    methods: {
+        incrementClicks: function incrementClicks(resourceId) {
+            this.$http.get('/increment-clicks/' + resourceId).then(function (success) {
+                //
+            }, function (error) {
+                //
+            });
+        }
+    }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n\n    <h3 v-if=\"!category\" class=\"blue-grey-text\">Last awesome resources added:</h3>\n    <h3 v-else=\"\" class=\"blue-grey-text\">Awesome resources from {{ category | lowercase }} category:</h3>\n\n    <div class=\"list-group\">\n        <a v-for=\"resource in resources\" href=\"{{ resource.link }}\" target=\"_blank\" class=\"list-group-item\">\n            <strong>{{ resource.name }}</strong> - {{ resource.short_description }}\n        </a>\n    </div>\n\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"row\">\n\n    <h3 v-if=\"!category\" class=\"blue-grey-text\">Last awesome resources added:</h3>\n    <h3 v-else=\"\" class=\"blue-grey-text\">{{ category }}</h3>\n\n    <div class=\"list-group\">\n        <a @click=\"incrementClicks(resource.id)\" v-for=\"resource in resources\" href=\"{{ resource.link }}\" target=\"_blank\" class=\"list-group-item\">\n            <strong>{{ resource.name }}</strong> - {{ resource.short_description }}\n        </a>\n    </div>\n\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

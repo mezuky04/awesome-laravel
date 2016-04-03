@@ -21,10 +21,11 @@ class CreateResourcesTable extends Migration {
             $table->bigIncrements('id');
             $table->smallInteger('resource_category_id')->unsigned();
             $table->string('name');
-            $table->string('short_description');
+            $table->string('short_description')->nullable();
             $table->string('link');
-            $table->string('contributor_email');
+            $table->string('contributor_email')->nullable();
             $table->boolean('checked')->default(false);
+            $table->bigInteger('clicks')->default(0);
             $table->timestamps();
 
             $table->foreign('resource_category_id')->references('id')->on('resource_categories')->onUpdate('cascade')->onDelete('cascade');
