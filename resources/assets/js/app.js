@@ -17,6 +17,7 @@ import Login from './components/Login.vue';
 import SubmitResource from './components/SubmitResource.vue';
 import Resources from './components/Resources.vue';
 import AdminCenter from './components/AdminCenter.vue';
+import LoginToContinue from './components/LoginToContinue.vue';
 
 new Vue({
     el: '#app',
@@ -25,5 +26,6 @@ new Vue({
         'submit-resource': SubmitResource,
         'resources': Resources,
         'admin-center': AdminCenter,
+        'login-to-continue': LoginToContinue
     }
 });

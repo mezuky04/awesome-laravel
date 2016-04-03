@@ -47,14 +47,6 @@
                 </div>
                 <!-- END Resource link -->
 
-                <!-- BEGIN Your email -->
-                <div class="form-group">
-                    <label for="your-email">Your email:</label>
-                    <input v-model="yourEmail" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.your_email }" type="email" id="your-email" class="form-control custom-input" placeholder="john.doe@example.com" />
-                    <span class="text-danger" v-show="errors.your_email">{{ errors.your_email }}</span>
-                </div>
-                <!-- END Your email -->
-
                 <!-- BEGIN Submit resource -->
                 <div class="btn btn-block btn-ghost-inverse" @click="submit">Share resource with others</div>
                 <!-- END Submit resource -->
@@ -73,7 +65,6 @@
                 resourceName: '',
                 shortResourceDescription: '',
                 resourceLink: '',
-                yourEmail: '',
                 categoryId: '',
                 categories: [],
                 errors: {},
@@ -154,7 +145,6 @@
                     resource_name: this.resourceName,
                     short_resource_description: this.shortResourceDescription,
                     resource_link: this.resourceLink,
-                    your_email: this.yourEmail,
                     category_id: this.categoryId
                 };
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Resource;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -39,7 +40,7 @@ class ResourcesController extends Controller {
 
     /**
      * Increment resource clicks.
-     * 
+     *
      * @param int $resourceId
      */
     public function incrementClicks($resourceId) {

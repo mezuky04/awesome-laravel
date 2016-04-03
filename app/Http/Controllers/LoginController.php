@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
+use App\User;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 /**
  * Handle user authentication.
@@ -72,6 +75,46 @@ class LoginController extends Controller {
     public function logout() {
         Auth::logout();
         return redirect('/');
+    }
+
+    public function redirectToProvider() {
+        return Socialite::driver('github')->redirect();
+    }
+
+    public function handleProviderCallback() {
+
+        $githubUser = Socialite::driver('github')->user();
+
+        // Register user if is not already registered
+        if (!User::where('github_id', $githubUser->getId())->count()) {
+            // Register new user
+            $user = User::create([
+                'github_id' => $githubUser->getId(),
+                'email' => $githubUser->getEmail()
+            ]);
+
+            // First application user will have admin role
+            if (User::count() === 1) {
+                $admin = new Role();
+                $admin->name = 'admin';
+                $admin->display_name = 'Administrator';
+                $admin->description = 'Application administrator';
+                $admin->save();
+                $user->attachRole($admin);
+            } else {
+                $simpleUser = new Role();
+                $simpleUser->name = 'simple-user';
+                $simpleUser->displayName = 'Simple user';
+                $simpleUser->description = 'Application user';
+                $simpleUser->save();
+                $user->attachRole($simpleUser);
+            }
+        } else {
+            $user = User::where('github_id', $githubUser->getId())->first();
+        }
+
+        Auth::login($user);
+        return redirect('/submit-resource');
     }
 
     /**

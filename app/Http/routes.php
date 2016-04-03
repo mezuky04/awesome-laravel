@@ -11,12 +11,14 @@ Route::get('/increment-clicks/{resourceId}', 'ResourcesController@incrementClick
 
 Route::get('/login', 'LoginController@index')->middleware('guest');
 Route::post('/login', 'LoginController@login')->middleware('guest');
+Route::get('/login/github', 'LoginController@redirectToProvider');
+Route::get('/login/github/callback', 'LoginController@handleProviderCallback');
 
 Route::get('/logout', 'LoginController@logout')->middleware('auth');
 
-Route::group(['prefix' => 'admin-center', 'namespace' => 'AdminCenter'], function() {
-    Route::get('/', 'AdminCenterController@index')->middleware('auth');
-    Route::get('/get-pending-requests', 'AdminCenterController@getPendingRequests')->middleware('auth');
-    Route::get('/accept-resource-request/{resourceId}', 'AdminCenterController@acceptResourceRequest')->middleware('auth');
-    Route::get('/decline-resource-request/{resourceId}', 'AdminCenterController@declineResourceRequest')->middleware('auth');
+Route::group(['prefix' => 'admin-center', 'namespace' => 'AdminCenter', 'middleware' => 'role:admin'], function() {
+    Route::get('/', 'AdminCenterController@index');
+    Route::get('/get-pending-requests', 'AdminCenterController@getPendingRequests');
+    Route::get('/accept-resource-request/{resourceId}', 'AdminCenterController@acceptResourceRequest');
+    Route::get('/decline-resource-request/{resourceId}', 'AdminCenterController@declineResourceRequest');
 });

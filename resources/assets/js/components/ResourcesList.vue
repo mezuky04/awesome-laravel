@@ -1,7 +1,7 @@
 <template>
     <div class="row">
 
-        <h3 v-if="!category" class="blue-grey-text">Last awesome resources added:</h3>
+        <h3 v-if="!category" class="blue-grey-text">Most accessed resources:</h3>
         <h3 v-else class="blue-grey-text">{{ category }}</h3>
 
         <div class="list-group">

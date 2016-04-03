@@ -15,5 +15,9 @@
 @endsection
 
 @section('content')
-    <submit-resource></submit-resource>
+    @if(Auth::check())
+        <submit-resource></submit-resource>
+    @else
+        <login-to-continue></login-to-continue>
+    @endif
 @endsection

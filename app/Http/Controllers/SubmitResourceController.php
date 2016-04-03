@@ -6,6 +6,7 @@ use App\Resource;
 use App\ResourceCategory;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Allow users to submit resources.
@@ -34,7 +35,6 @@ class SubmitResourceController extends Controller {
             'resource_name' => ['required', 'string', 'between:3,50'],
             'short_resource_description' => ['required', 'string', 'between:5,50'],
             'resource_link' => ['required'],
-            'your_email' => ['required', 'email'],
             'category_id' => ['required', 'exists:resource_categories,id']
         ]);
 
@@ -42,7 +42,7 @@ class SubmitResourceController extends Controller {
             'name' => $request->get('resource_name'),
             'link' => $request->get('resource_link'),
             'short_description' => $request->get('short_resource_description'),
-            'contributor_email' => $request->get('your_email'),
+            'contributor_email' => Auth::user()->email,
             'resource_category_id' => $request->get('category_id')
         ]);
         
@@ -67,7 +67,7 @@ class SubmitResourceController extends Controller {
      */
     protected function formatValidationErrors(Validator $validator) {
 
-        $validatedFields = ['resource_name', 'short_resource_description', 'resource_link', 'your_email', 'category_id'];
+        $validatedFields = ['resource_name', 'short_resource_description', 'resource_link', 'category_id'];
 
         $messages = $validator->messages();
         $errors = [];
