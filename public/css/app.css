@@ -6075,7 +6075,11 @@ html, body {
 #footer .footer-text {
   line-height: 50px;
   vertical-align: middle;
-  color: #224e6b; }
+  color: #39806e; }
+
+#footer .footer-text a {
+  color: #39806e;
+  text-decoration: underline; }
 
 .submit-resource-row, .homepage-row {
   padding: 20px 0 20px 0; }

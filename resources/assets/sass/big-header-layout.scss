@@ -31,7 +31,12 @@ $footer-height: 50px;
 #footer .footer-text {
   line-height: 50px;
   vertical-align: middle;
-  color: $brand;
+  color: darken($secondary, 25%);
+}
+
+#footer .footer-text a {
+  color: darken($secondary, 25%);
+  text-decoration: underline;
 }
 
 .submit-resource-row, .homepage-row {
