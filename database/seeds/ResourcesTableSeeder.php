@@ -85,9 +85,30 @@ class ResourcesTableSeeder extends Seeder {
             ], 'Starter Projects' => [
                 'checked' => true,
                 'resource_category_id' => \App\ResourceCategory::where('name', 'Starter Projects')->first()->id
-            ], 'Codebases for Reference' => [
+            ], 'Codebase for Reference' => [
                 'checked' => true,
-                'resource_category_id' => \App\ResourceCategory::where('name', 'Codebases for Reference')->first()->id
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Codebase for Reference')->first()->id
+            ], 'Newsletters' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Newsletters')->first()->id
+            ], 'Podcasts' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Podcasts')->first()->id
+            ], 'Forums' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Forums')->first()->id
+            ], 'Local User Groups' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Local User Groups')->first()->id
+            ], 'Jobs' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Jobs')->first()->id
+            ], 'Hosted Development Tools' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Hosted Development Tools')->first()->id
+            ], 'Miscellaneous' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Miscellaneous')->first()->id
             ]
         ];
 
@@ -960,7 +981,7 @@ class ResourcesTableSeeder extends Seeder {
                     'link' => 'https://github.com/unicodeveloper/laravel-hackathon-starter',
                     'short_description' => 'A hackathon boilerplate for laravel web applications. Start your hackathons without hassle'
                 ]
-            ], 'Codebases for Reference' => [
+            ], 'Codebase for Reference' => [
                 [
                     'name' => '92Five',
                     'link' => 'https://github.com/chintanbanugaria/92five',
@@ -1037,6 +1058,148 @@ class ResourcesTableSeeder extends Seeder {
                     'name' => 'Katana',
                     'link' => 'https://github.com/themsaid/katana',
                     'short_description' => 'Laravel static site/blog generator with markdown support'
+                ]
+            ], 'Newsletters' => [
+                [
+                    'name' => 'Laravel Weekly',
+                    'link' => 'http://laravelweekly.com/',
+                    'short_description' => 'Get weekly Laravel news delivered straight to your inbox!'
+                ], [
+                    'name' => 'Laravel News',
+                    'link' => 'https://laravel-news.com/',
+                    'short_description' => 'Every week lots of tips, tutorials, and packages are released for Laravel'
+                ]
+            ], 'Podcasts' => [
+                [
+                    'name' => 'The Laravel Podcast',
+                    'link' => 'http://www.laravelpodcast.com/',
+                    'short_description' => 'The Laravel Podcast brings you Laravel and PHP development news and discussion'
+                ], [
+                    'name' => 'The Laravel News Podcast',
+                    'link' => 'http://podcast.laravel-news.com/',
+                    'short_description' => 'The Laravel News Podcast brings you all the latest news and events related to Laravel'
+                ], [
+                    'name' => 'The Laracasts Snippet',
+                    'link' => 'https://laracasts.simplecast.fm/',
+                    'short_description' => 'The Laracasts snippet, each episode, offers a single thought on some aspect of web development'
+                ]
+            ], 'Forums' => [
+                [
+                    'name' => 'Laravel.io Forum',
+                    'link' => 'http://laravel.io/forum',
+                    'short_description' => 'Laravel forum'
+                ], [
+                    'name' => 'Laracasts Forum',
+                    'link' => 'https://laracasts.com/discuss',
+                    'short_description' => 'Laracasts forum'
+                ], [
+                    'name' => 'Quora',
+                    'link' => 'https://www.quora.com/topic/Laravel',
+                    'short_description' => 'Laravel topic on Quora'
+                ], [
+                    'name' => 'Stackoverflow',
+                    'link' => 'http://stackoverflow.com/questions/tagged/laravel',
+                    'short_description' => 'Laravel on Stackoverflow'
+                ]
+            ], 'Local User Groups' => [
+                [
+                    'name' => 'Laravel Russia',
+                    'link' => 'https://laravel.ru/',
+                    'short_description' => 'Russia Laravel group'
+                ], [
+                    'name' => 'Laravel France',
+                    'link' => 'http://laravel.fr/',
+                    'short_description' => 'France Laravel group'
+                ], [
+                    'name' => 'Laravel Indonesia',
+                    'link' => 'http://id-laravel.com/',
+                    'short_description' => 'Indonesia Laravel group'
+                ], [
+                    'name' => 'Laravel Brasil',
+                    'link' => 'http://www.laravel.com.br/',
+                    'short_description' => 'Brasil Laravel group'
+                ], [
+                    'name' => 'Laravel Turkey',
+                    'link' => 'http://www.laravel.gen.tr/',
+                    'short_description' => 'Turkey Laravel group'
+                ], [
+                    'name' => 'Laravel China',
+                    'link' => 'https://phphub.org/',
+                    'short_description' => 'China Laravel group'
+                ], [
+                    'name' => 'Laravel Taiwan',
+                    'link' => 'https://laravel.tw/',
+                    'short_description' => 'Taiwan Laravel group'
+                ], [
+                    'name' => 'Laravel Spanish',
+                    'link' => 'http://laraveles.com/foro/',
+                    'short_description' => 'Spanish Laravel group'
+                ], [
+                    'name' => 'Laravel Korea',
+                    'link' => 'https://www.laravel.co.kr/',
+                    'short_description' => 'Korea Laravel group'
+                ], [
+                    'name' => 'Laravel Japan',
+                    'link' => 'http://laravel.jp/',
+                    'short_description' => 'Japan Laravel group'
+                ], [
+                    'name' => 'Laravel Tokyo',
+                    'link' => 'http://laravel.tokyo/',
+                    'short_description' => 'Tokyo Laravel group'
+                ], [
+                    'name' => 'Laravel Greece',
+                    'link' => 'http://www.laravel.gr/',
+                    'short_description' => 'Greece Laravel group'
+                ], [
+                    'name' => 'Laravel Middle East',
+                    'link' => 'http://laravelme.com/',
+                    'short_description' => 'Middle East Laravel group'
+                ]
+            ], 'Jobs' => [
+                [
+                    'name' => 'LaraJobs',
+                    'link' => 'https://larajobs.com/',
+                    'short_description' => 'LaraJobs is the best place to post your PHP, Laravel, or technical guru jobs'
+                ], [
+                    'name' => 'Laravel Gurus',
+                    'link' => 'http://laravelgurus.com/',
+                    'short_description' => 'Laravel Consultants & Freelancers'
+                ]
+            ], 'Hosted Development Tools' => [
+                [
+                    'name' => 'Laravel Shift',
+                    'link' => 'https://laravelshift.com/',
+                    'short_description' => 'Automated upgrade tool for Laravel projects'
+                ], [
+                    'name' => 'Laravel Versions {x.y.z}',
+                    'link' => 'https://laraver.xyz/',
+                    'short_description' => 'Monitor Laravel for updates'
+                ], [
+                    'name' => 'Laragen',
+                    'link' => 'http://makzumi.com/laragen/',
+                    'short_description' => 'View generator'
+                ], [
+                    'name' => 'Laravel Schema Designer',
+                    'link' => 'http://laravelsd.com/',
+                    'short_description' => 'Create, export and share database schemas'
+                ], [
+                    'name' => 'Laravel Database Designer',
+                    'link' => 'http://biodesignrealworld.github.io/LaravelDatabaseDesigner/',
+                    'short_description' => 'Graphical tool to create database schemas'
+                ]
+            ], 'Miscellaneous' => [
+                [
+                    'name' => 'Larasites',
+                    'link' => 'https://www.larasites.com/',
+                    'short_description' => 'Collection of websites and apps built with Laravel'
+                ], [
+                    'name' => 'CodeCanyon',
+                    'link' => 'http://codecanyon.net/tags/laravel?term=laravel',
+                    'short_description' => 'Paid scripts and plugins'
+                ], [
+                    'name' => 'Laramap',
+                    'link' => 'https://laramap.com/',
+                    'short_description' => 'Interactive map of Laravel developers'
                 ]
             ]
         ];

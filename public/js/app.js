@@ -23574,7 +23574,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<h4 class=\"text-center\">To post a new resource you need to be log in with GitHub.</h4>\n<h5>Remember, post only awesome resources. <a href=\"/contributors-guide\">See our Contributors Guide.</a></h5>\n<a href=\"/login/github\">\n    <button class=\"btn btn-default-inverse\">Connect with GitHub</button>\n</a>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<h4 class=\"text-center\">To post a new resource you need to log in with GitHub.</h4>\n<h5>Remember, post only awesome resources. <a href=\"/contributors-guide\">See our Contributors Guide.</a></h5>\n<a href=\"/login/github\">\n    <button class=\"btn btn-default-inverse\">Connect with GitHub</button>\n</a>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
