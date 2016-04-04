@@ -39,10 +39,10 @@ class SubmitResourceController extends Controller {
         ]);
 
         Resource::create([
+            'user_id' => Auth::user()->id,
             'name' => $request->get('resource_name'),
             'link' => $request->get('resource_link'),
             'short_description' => $request->get('short_resource_description'),
-            'contributor_email' => Auth::user()->email,
             'resource_category_id' => $request->get('category_id')
         ]);
         

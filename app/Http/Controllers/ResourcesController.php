@@ -25,6 +25,7 @@ class ResourcesController extends Controller {
             ->leftJoin('resource_categories', 'resources.resource_category_id', '=', 'resource_categories.id')
             ->where('resource_categories.name', $categoryName)
             ->where('checked', true)
+            ->where('allowed', true)
             ->orderBy('resources.created_at', 'desc')
             ->get();
     }
@@ -35,7 +36,7 @@ class ResourcesController extends Controller {
      * @return mixed
      */
     public function getTopResources() {
-        return Resource::where('checked', true)->orderBy('clicks', 'desc')->take(10)->get();
+        return Resource::where('checked', true)->where('allowed', true)->orderBy('clicks', 'desc')->take(10)->get();
     }
 
     /**

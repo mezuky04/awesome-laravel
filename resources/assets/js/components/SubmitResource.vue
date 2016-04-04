@@ -2,9 +2,12 @@
     <div class="row submit-resource">
         <div class="col-md-8 col-md-offset-2">
 
-            <div v-show="done" class="alert alert-success">Success! Your resource was sent and is waiting for approval. You will receive an email soon.</div>
+            <div v-show="done" class="alert alert-success">
+                <strong>Success! Your resource was sent and is waiting for approval. An email will be sent to your GitHub address with the decision. Have a nice day!</strong>
+            </div>
 
             <div v-show="!done">
+
                 <div v-show="error" class="alert alert-danger">{{ error }}</div>
 
                 <!-- BEGIN Resource category -->
@@ -12,7 +15,7 @@
                     <img src="/img/loader.svg" />
                 </div>
                 <div v-show="!loadingResourceCategories && categories" class="form-group">
-                    <label>Choose resource category:</label>
+                    <label class="blue-grey-text">Choose resource category:</label>
                     <br>
                     <select id="selectpicker" v-model="categoryId" v-bind:data-style="selectStyle">
                         <option selected="selected" disabled="disabled">Nothing selected</option>
@@ -25,7 +28,7 @@
 
                 <!-- BEGIN Resource name -->
                 <div class="form-group">
-                    <label for="resource-name">Resource name:</label>
+                    <label class="blue-grey-text" for="resource-name">Resource name:</label>
                     <input v-model="resourceName" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.resource_name }" type="text" id="resource-name" class="form-control custom-input" placeholder="Example: Laracasts" autocomplete="off" />
                     <span class="text-danger" v-show="errors.resource_name">{{ errors.resource_name }}</span>
                 </div>
@@ -33,7 +36,7 @@
 
                 <!-- BEGIN Short resource description -->
                 <div class="form-group">
-                    <label for="short-resource-description">Short resource description:</label>
+                    <label class="blue-grey-text" for="short-resource-description">Short resource description:</label>
                     <input v-model="shortResourceDescription" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.short_resource_description }" type="text" id="short-resource-description" class="form-control custom-input" placeholder="Example: Learn practical, modern web development, through expert screencasts." />
                     <span class="text-danger" v-show="errors.short_resource_description">{{ errors.short_resource_description }}</span>
                 </div>
@@ -41,7 +44,7 @@
 
                 <!-- BEGIN Resource link -->
                 <div class="form-group">
-                    <label for="resource-link">Resource link:</label>
+                    <label class="blue-grey-text" for="resource-link">Resource link:</label>
                     <input v-model="resourceLink" @keyup.enter="submit" v-bind:class="{ 'custom-error': errors.resource_link }" type="text" id="resource-link" class="form-control custom-input" placeholder="https://laracasts.com" />
                     <span class="text-danger" v-show="errors.resource_link">{{ errors.resource_link }}</span>
                 </div>

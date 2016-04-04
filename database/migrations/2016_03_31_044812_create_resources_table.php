@@ -19,15 +19,17 @@ class CreateResourcesTable extends Migration {
         Schema::create('resources', function(Blueprint $table) {
 
             $table->bigIncrements('id');
+            $table->integer('user_id')->unsigned();
             $table->smallInteger('resource_category_id')->unsigned();
             $table->string('name');
             $table->string('short_description')->nullable();
             $table->string('link');
-            $table->string('contributor_email')->nullable();
             $table->boolean('checked')->default(false);
+            $table->boolean('allowed')->default(true);
             $table->bigInteger('clicks')->default(0);
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('resource_category_id')->references('id')->on('resource_categories')->onUpdate('cascade')->onDelete('cascade');
         });
     }

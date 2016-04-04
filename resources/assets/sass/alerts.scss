@@ -1,3 +1,11 @@
 $alert-danger-border: $error;
 $alert-danger-bg: rgba(0, 0, 0, 0);
 $alert-danger-text: $error;
+
+$alert-info-border: $grey;
+$alert-info-bg: rgba(0, 0, 0, 0);
+$alert-info-text: darken($grey, 25%);
+
+$alert-success-border: $secondary;
+$alert-success-bg: rgba(0, 0, 0, 0);
+$alert-success-text: $secondary;

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-static-top navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Awesome Laravel</a>
+            <a class="navbar-brand" href="/">Awesome Laravel</a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">

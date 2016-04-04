@@ -1,10 +1,15 @@
 <template>
 
-    <h4 class="text-center">To post a new resource you need to log in with GitHub.</h4>
-    <h5>Remember, post only awesome resources. <a href="/contributors-guide">See our Contributors Guide.</a></h5>
-    <a href="/login/github">
-        <button class="btn btn-default-inverse">Connect with GitHub</button>
-    </a>
+    <div class="row text-center">
+
+        <div class="col-md-12 connect-with-github">
+            <h4 class="blue-grey-text">To post a new resource, you need to connect with GitHub.</h4>
+            <a href="/login/github">
+                <button class="btn btn-default-inverse"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Connect with GitHub</button>
+            </a>
+        </div>
+    </div>
+
 </template>
 
 <script>

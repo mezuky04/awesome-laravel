@@ -4339,22 +4339,22 @@ a.thumbnail.active {
     color: inherit; }
 
 .alert-success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c763d; }
+  background-color: transparent;
+  border-color: #76C2AF;
+  color: #76C2AF; }
   .alert-success hr {
-    border-top-color: #c9e2b3; }
+    border-top-color: #64baa5; }
   .alert-success .alert-link {
-    color: #2b542c; }
+    color: #53b29a; }
 
 .alert-info {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-  color: #31708f; }
+  background-color: transparent;
+  border-color: #cccccc;
+  color: #8c8c8c; }
   .alert-info hr {
-    border-top-color: #a6e1ec; }
+    border-top-color: #bfbfbf; }
   .alert-info .alert-link {
-    color: #245269; }
+    color: #737373; }
 
 .alert-warning {
   background-color: #fcf8e3;
@@ -6043,11 +6043,22 @@ select.selectpicker {
 .center-responsive-image {
   margin: 0 auto; }
 
+.display-inline-block {
+  display: inline-block; }
+
+.pointer:hover {
+  cursor: pointer; }
+
 /**
  * Allow vertical align in tables.
  */
 .table tbody > tr > td.vert-align {
   vertical-align: middle; }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
 
 html, body {
   margin: 0;
@@ -6083,6 +6094,9 @@ html, body {
 
 .submit-resource-row, .homepage-row {
   padding: 20px 0 20px 0; }
+
+.email {
+  margin-top: 8px; }
 
 .icon {
   padding: 30px 0 45px 0; }
@@ -7028,6 +7042,17 @@ body.stop-scrolling {
     transform: translateY(145%); } }
 
 .submit-resource {
+  margin: 50px 0 50px 0; }
+
+.read-guide {
+  display: inline-block;
+  margin-top: 25px; }
+
+.read-guide a {
+  color: #e6e6e6;
+  text-decoration: underline; }
+
+.connect-with-github {
   margin: 50px 0 50px 0; }
 
 /*# sourceMappingURL=app.css.map */
