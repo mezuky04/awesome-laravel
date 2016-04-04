@@ -82,6 +82,12 @@ class ResourcesTableSeeder extends Seeder {
             ], 'Books' => [
                 'checked' => true,
                 'resource_category_id' => \App\ResourceCategory::where('name', 'Books')->first()->id
+            ], 'Starter Projects' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Starter Projects')->first()->id
+            ], 'Codebases for Reference' => [
+                'checked' => true,
+                'resource_category_id' => \App\ResourceCategory::where('name', 'Codebases for Reference')->first()->id
             ]
         ];
 
@@ -935,6 +941,102 @@ class ResourcesTableSeeder extends Seeder {
                     'name' => 'Laraboot: Laravel 5 For Beginners',
                     'link' => 'https://leanpub.com/laravel-5-for-beginners-laraboot',
                     'short_description' => 'by Bill Keck'
+                ]
+            ], 'Starter Projects' => [
+                [
+                    'name' => 'Laravel 5.1 Boilerplate',
+                    'link' => 'https://github.com/rappasoft/laravel-5-boilerplate',
+                    'short_description' => 'Provides you with a massive head start on any size web application'
+                ], [
+                    'name' => 'Laravel 5 Angular Material Starter',
+                    'link' => 'https://github.com/jadjoubran/laravel5-angular-material-starter',
+                    'short_description' => 'Build your next powerful web app with Laravel and Angular'
+                ], [
+                    'name' => 'Acacha adminlte-laravel',
+                    'link' => 'https://github.com/acacha/adminlte-laravel',
+                    'short_description' => 'A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page'
+                ], [
+                    'name' => 'Laravel Hackaton Starter',
+                    'link' => 'https://github.com/unicodeveloper/laravel-hackathon-starter',
+                    'short_description' => 'A hackathon boilerplate for laravel web applications. Start your hackathons without hassle'
+                ]
+            ], 'Codebases for Reference' => [
+                [
+                    'name' => '92Five',
+                    'link' => 'https://github.com/chintanbanugaria/92five',
+                    'short_description' => 'Self hosted project management application'
+                ], [
+                    'name' => 'Bootstrap CMS',
+                    'link' => 'https://github.com/BootstrapCMS/CMS',
+                    'short_description' => 'A PHP CMS powered by Laravel 5 and Sentry'
+                ], [
+                    'name' => 'Cachet',
+                    'link' => 'https://github.com/cachethq/Cachet',
+                    'short_description' => 'An open source status page system for everyone'
+                ], [
+                    'name' => 'Deployer',
+                    'link' => 'https://github.com/REBELinBLUE/deployer',
+                    'short_description' => 'Deployer is a free and open source deployment tool'
+                ], [
+                    'name' => 'Invoice Ninja',
+                    'link' => 'https://github.com/invoiceninja/invoiceninja',
+                    'short_description' => 'An open-source invoicing and time-tracking app built with Laravel'
+                ], [
+                    'name' => 'Koel',
+                    'link' => 'https://github.com/phanan/koel',
+                    'short_description' => 'A personal music streaming server that works'
+                ], [
+                    'name' => 'Laravel Tricks',
+                    'link' => 'https://github.com/CodepadME/laravel-tricks',
+                    'short_description' => 'The source code for the Laravel Tricks website'
+                ], [
+                    'name' => 'Laravel.IO',
+                    'link' => 'https://github.com/LaravelIO/laravel.io',
+                    'short_description' => 'The Laravel.io Community Portal'
+                ], [
+                    'name' => 'October',
+                    'link' => 'https://github.com/octobercms/october',
+                    'short_description' => 'Free, open-source, self-hosted CMS platform based on the Laravel PHP Framework'
+                ], [
+                    'name' => 'Paperwork',
+                    'link' => 'https://github.com/twostairs/paperwork',
+                    'short_description' => 'OpenSource note-taking & archiving alternative to Evernote, Microsoft OneNote & Google Keep'
+                ], [
+                    'name' => 'PHPHub',
+                    'link' => 'https://github.com/summerblue/phphub',
+                    'short_description' => 'Forum project written in Laravel 4.2, and it is also the project build up PHP & Laravel China community'
+                ], [
+                    'name' => 'PyroCMS',
+                    'link' => 'https://github.com/pyrocms/pyrocms',
+                    'short_description' => 'An MVC PHP Content Management System built to be easy to use, theme and develop with'
+                ], [
+                    'name' => 'TypiCMS',
+                    'link' => 'https://github.com/TypiCMS/Base',
+                    'short_description' => 'Multilingual and modular CMS built with Laravel 5.2'
+                ], [
+                    'name' => 'Wardrobe',
+                    'link' => 'https://github.com/wardrobecms/wardrobe',
+                    'short_description' => 'A minimal blogging application'
+                ], [
+                    'name' => 'Flarum',
+                    'link' => 'https://github.com/flarum/flarum',
+                    'short_description' => 'Delightfully simple forum software'
+                ], [
+                    'name' => 'Lavalite',
+                    'link' => 'https://github.com/LavaLite/cms',
+                    'short_description' => 'CMS built on Laravel 5.2'
+                ], [
+                    'name' => 'Laramap',
+                    'link' => 'https://github.com/laramap/laramap.com',
+                    'short_description' => 'Source of Laramap.com'
+                ], [
+                    'name' => 'Attendize',
+                    'link' => 'https://github.com/Attendize/Attendize',
+                    'short_description' => 'Free & open-source ticket selling and event management platform'
+                ], [
+                    'name' => 'Katana',
+                    'link' => 'https://github.com/themsaid/katana',
+                    'short_description' => 'Laravel static site/blog generator with markdown support'
                 ]
             ]
         ];
