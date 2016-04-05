@@ -28,8 +28,9 @@ class AdminCenterController extends Controller {
      * @return mixed
      */
     public function getPendingRequests() {
-        return Resource::select('resources.id', 'resources.name', 'resources.short_description', 'resources.link', 'resources.user_id',
+        return Resource::select('resources.id', 'resources.name', 'users.email as contributor_email', 'resources.short_description', 'resources.link', 'resources.user_id',
             'resource_categories.name as category')
+            ->leftJoin('users', 'users.id', '=', 'resources.user_id')
             ->leftJoin('resource_categories', 'resource_categories.id', '=', 'resources.resource_category_id')
             ->where('checked', false)->get();
     }

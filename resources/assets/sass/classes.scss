@@ -1,4 +1,4 @@
-.white-text {
+.white-text, .white-text:hover, .white-text:active, .white-text:focus {
   color: #ffffff;
 }
 
@@ -72,10 +72,4 @@
  */
 .table tbody>tr>td.vert-align{
   vertical-align: middle;
-}
-
-.vcenter {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
 }

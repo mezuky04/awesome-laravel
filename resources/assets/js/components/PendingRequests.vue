@@ -26,7 +26,7 @@
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li @click="accept(request.id)"><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp;Accept</a></li>
-                                <li @click="decline(request.id)"><a href="#"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></li>
+                                <li @click="decline(request.id)"><a href="#"><span class="glyphicon glyphicon-trash"></span>&nbsp;Decline</a></li>
                             </ul>
                         </div>
                     </td>

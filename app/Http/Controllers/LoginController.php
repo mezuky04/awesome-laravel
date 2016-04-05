@@ -19,53 +19,6 @@ use Laravel\Socialite\Facades\Socialite;
 class LoginController extends Controller {
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
-    
-    /**
-     * Render login page.
-     *
-     * @return mixed
-     */
-    public function index() {
-        return view('pages.login');
-    }
-
-    /**
-     * Handle login.
-     *
-     * @param Request $request
-     * @return mixed
-     */
-    public function login(Request $request) {
-
-        // Validate credentials
-        $this->validate($request, [
-            'email' => ['required', 'email'],
-            'password' => ['required', 'between:6,128']
-        ]);
-
-        $credentials = $request->only('email', 'password');
-        $throttles = $this->isUsingThrottlesLoginsTrait();
-
-        // Check if user has too many login attempts
-        if ($throttles && $this->hasTooManyLoginAttempts($request)) {
-            return response()->json(['lockout_time' => $this->lockoutTime()]);
-        }
-
-        // Check if credentials are correct
-        if (Auth::attempt($credentials)) {
-            return response()->json(['success' => true]);
-        }
-
-        // If we arrive here email/password combination is wrong
-        if ($throttles) {
-            $this->incrementLoginAttempts($request);
-        }
-
-        return response()->json([
-            'success' => false,
-            'error' => 'Invalid email or password.'
-        ], 422);
-    }
 
     /**
      * Handle user log out.
@@ -104,7 +57,7 @@ class LoginController extends Controller {
             } else {
                 $simpleUser = new Role();
                 $simpleUser->name = 'simple-user';
-                $simpleUser->displayName = 'Simple user';
+                $simpleUser->display_name = 'Simple user';
                 $simpleUser->description = 'Application user';
                 $simpleUser->save();
                 $user->attachRole($simpleUser);

@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="_token" id="_token" content="{{ csrf_token() }}">
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    <title>Awesome Laravel</title>
+    <meta name="description" content="All awesome Laravel resources.">
 
     <link rel="stylesheet" href="/css/app.css">
 

@@ -11,4 +11,8 @@
             <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
+@else
+    <div class="pull-right">
+        <a class="white-text" href="/login/github"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Log in with GitHub</a>
+    </div>
 @endif
