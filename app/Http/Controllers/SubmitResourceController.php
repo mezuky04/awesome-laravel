@@ -34,7 +34,7 @@ class SubmitResourceController extends Controller {
         $this->validate($request, [
             'resource_name' => ['required', 'string', 'between:3,50'],
             'short_resource_description' => ['required', 'string', 'between:5,50'],
-            'resource_link' => ['required'],
+            'resource_link' => ['required', 'url'],
             'category_id' => ['required', 'exists:resource_categories,id']
         ]);
 

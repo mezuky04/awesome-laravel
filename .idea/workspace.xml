@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf0bb24-a13b-4610-b449-480dcb3b9510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/ResourceDeclinedNotification.php" afterPath="$PROJECT_DIR$/app/Listeners/ResourceDeclinedNotification.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/email/resource-notification.blade.php" afterPath="$PROJECT_DIR$/resources/views/email/resource-notification.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php" />
     </list>
     <ignored path="awesome-laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="resource-notification.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/email/resource-notification.blade.php">
+      <file leaf-file-name="submit-resource.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+            <state relative-caret-position="130">
+              <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -66,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/layouts/base.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/ReviewResourceRequest.vue" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/PendingRequests.vue" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
@@ -89,13 +87,11 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/pages/login.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/LoginToContinue.vue" />
-        <option value="$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/alerts.scss" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/SubmitResource.vue" />
         <option value="$PROJECT_DIR$/resources/assets/sass/pages/submit-resource.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/classes.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/big-header-layout.scss" />
-        <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Events/ResourceApproved.php" />
         <option value="$PROJECT_DIR$/resources/views/email/approved.blade.php" />
@@ -105,7 +101,6 @@
         <option value="$PROJECT_DIR$/app/Events/ResourceDeclined.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php" />
         <option value="$PROJECT_DIR$/database/seeds/ResourcesTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_31_044812_create_resources_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
@@ -117,6 +112,10 @@
         <option value="$PROJECT_DIR$/app/Listeners/ResourceApprovedNotification.php" />
         <option value="$PROJECT_DIR$/app/Listeners/ResourceDeclinedNotification.php" />
         <option value="$PROJECT_DIR$/resources/views/email/resource-notification.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/partials/email.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php" />
       </list>
     </option>
   </component>
@@ -243,7 +242,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,10 +269,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -648,12 +647,12 @@
       <workItem from="1459609551609" duration="2675000" />
       <workItem from="1459666270897" duration="16695000" />
       <workItem from="1459746133053" duration="16781000" />
-      <workItem from="1459828783531" duration="5405000" />
+      <workItem from="1459828783531" duration="5695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133222000" />
+    <option name="totallyTimeSpent" value="133512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -695,13 +694,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/ChooseCategory.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -843,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="148" selection-start-line="10" selection-start-column="148" selection-end-line="10" selection-end-column="148" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/SubmitResource.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -887,13 +872,6 @@
             <marker date="1459791434350" expanded="true" signature="628:650" placeholder="{...}" />
             <marker date="1459791434350" expanded="true" signature="658:687" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -950,20 +928,6 @@
             <marker date="1459794591330" expanded="true" signature="550:642" placeholder=" Get the channels the event should be broadcast on. ..." />
             <marker date="1459794591330" expanded="true" signature="680:704" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1028,27 +992,6 @@
         <state relative-caret-position="78">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="67" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/base.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="982">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-          <folding>
-            <marker date="1459585317618" expanded="true" signature="31:1446" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="38:547" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="431:537" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="563:1438" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="582:1393" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="631:912" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="712:823" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="748:808" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="987:1077" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="1020:1065" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="1151:1362" placeholder="..." />
-            <marker date="1459585317618" expanded="true" signature="1195:1351" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1145,6 +1088,152 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+          <folding>
+            <marker date="1459862300982" expanded="true" signature="21:7735" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="28:4908" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="221:4900" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="350:555" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="569:635" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="650:816" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="948:987" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="1034:1080" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="1101:1140" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="1158:1406" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="1461:1655" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="1681:1975" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="2003:2352" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="2368:2409" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="2552:2615" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="2652:2702" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="2848:2920" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="2956:3025" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3055:3094" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3253:3474" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3487:3527" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3539:3579" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3591:3631" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3667:3773" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="3804:3886" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="4222:4388" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="4506:4544" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="4658:4755" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="4851:4887" placeholder="{...}" />
+            <marker date="1459862300982" expanded="true" signature="4934:7727" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="4993:7098" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5002:7089" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5069:7061" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5133:7016" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5157:6997" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5182:6972" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5211:6946" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="5827:6140" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="6228:6392" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="6675:6880" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="6732:6843" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7158:7701" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7167:7692" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7216:7664" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7280:7619" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7304:7600" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7329:7575" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7373:7549" placeholder="..." />
+            <marker date="1459862300982" expanded="true" signature="7405:7519" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubmitResourceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+          <folding>
+            <marker date="1459862430190" expanded="false" signature="44:196" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="201:302" placeholder=" Allow users to submit resources. ..." />
+            <marker date="1459862430190" expanded="true" signature="356:2325" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="365:436" placeholder=" Render submit resource page. ..." />
+            <marker date="1459862430190" expanded="true" signature="468:519" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="529:638" placeholder=" Allow users to submit new resources. ..." />
+            <marker date="1459862430190" expanded="true" signature="695:1431" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="720:1023" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="731:1022" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="1052:1361" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="1053:1360" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="1441:1520" placeholder=" Return all categories in json format. ..." />
+            <marker date="1459862430190" expanded="true" signature="1560:1680" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="1690:1803" placeholder=" Custom format for validation errors. ..." />
+            <marker date="1459862430190" expanded="true" signature="1875:2323" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="2099:2224" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="2141:2214" placeholder="..." />
+            <marker date="1459862430190" expanded="true" signature="2243:2316" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+          <folding>
+            <marker date="1459795058062" expanded="true" signature="52:494" placeholder="..." />
+            <marker date="1459795058062" expanded="true" signature="80:487" placeholder="..." />
+            <marker date="1459795058062" expanded="true" signature="116:196" placeholder="..." />
+            <marker date="1459795058062" expanded="true" signature="246:476" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/base.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1248">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+          <folding>
+            <marker date="1459585317618" expanded="true" signature="31:1446" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="38:547" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="431:537" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="563:1438" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="582:1393" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="631:912" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="712:823" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="748:808" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="987:1077" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="1020:1065" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="1151:1362" placeholder="..." />
+            <marker date="1459585317618" expanded="true" signature="1195:1351" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/partials/email.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <marker date="1459862591106" expanded="true" signature="94:525" placeholder="..." />
+            <marker date="1459862591106" expanded="true" signature="131:305" placeholder="..." />
+            <marker date="1459862591106" expanded="true" signature="340:514" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="6" selection-end-column="14" />
+          <folding>
+            <marker date="1459862591102" expanded="true" signature="51:627" placeholder="..." />
+            <marker date="1459862591102" expanded="true" signature="92:287" placeholder="..." />
+            <marker date="1459862591102" expanded="true" signature="124:276" placeholder="..." />
+            <marker date="1459862591102" expanded="true" signature="322:505" placeholder="..." />
+            <marker date="1459862591102" expanded="true" signature="533:625" placeholder="..." />
+            <marker date="1459862591102" expanded="true" signature="658:687" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
           <folding />
         </state>
       </provider>
