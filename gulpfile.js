@@ -13,6 +13,7 @@ require('laravel-elixir-vueify');
 
 elixir(function(mix) {
     mix.sass('app.scss');
+    mix.sass('emails/resource-notification.scss', 'public/css/resource-notification.css');
     mix.copy('node_modules/bootstrap-sass/assets/fonts', 'public/fonts');
     mix.browserify('app.js');
     mix.phpUnit();

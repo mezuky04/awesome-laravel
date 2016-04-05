@@ -30,9 +30,9 @@ class ResourceDeclinedNotification {
      * @return void
      */
     public function handle(ResourceDeclined $event) {
-        Mail::queue('email.resource-notification', ['resource' => $event->resource], function($message) use ($event) {
+        Mail::queue('email.resource-notification', ['resource' => $event->resource, 'declined' => true], function($message) use ($event) {
             $message->from('notifications@awesome-laravel.com', 'Awesome Laravel');
-            $message->to(User::where('id', $event->resource->user_id)->first()->id)->subject('Your resource was declined');
+            $message->to(User::where('id', $event->resource->user_id)->first()->email)->subject('Your resource was declined');
         });
     }
 }
