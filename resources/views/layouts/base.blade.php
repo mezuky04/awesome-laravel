@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="_token" id="_token" content="{{ csrf_token() }}">
-    <title>Awesome Laravel</title>
-    <meta name="description" content="All awesome Laravel resources.">
+    <title>Awesome Laravel - List of awesome Laravel resources</title>
+    <meta name="description" content="Useful Laravel packages, tutorials, videos, articles and other resources.">
 
     <link rel="stylesheet" href="/css/app.css">
 
