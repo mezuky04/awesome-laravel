@@ -38,6 +38,6 @@ return [
     'github' => [
         'client_id' => '42ceb85f69205ebc9e81',
         'client_secret' => '6a1407f0812986e9f8e34954f4102eb9c1e9b769',
-        'redirect' => 'http://awesome-laravel-dev.com/login/github/callback',
+        'redirect' => 'http://awesome-laravel.com/login/github/callback',
     ],
 ];
