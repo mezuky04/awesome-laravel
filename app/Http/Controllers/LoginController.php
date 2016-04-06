@@ -55,11 +55,15 @@ class LoginController extends Controller {
                 $admin->save();
                 $user->attachRole($admin);
             } else {
-                $simpleUser = new Role();
-                $simpleUser->name = 'simple-user';
-                $simpleUser->display_name = 'Simple user';
-                $simpleUser->description = 'Application user';
-                $simpleUser->save();
+
+                $simpleUser = Role::where('name', 'simple-user')->first();
+                if (!$simpleUser) {
+                    $simpleUser = new Role();
+                    $simpleUser->name = 'simple-user';
+                    $simpleUser->display_name = 'Simple user';
+                    $simpleUser->description = 'Application user';
+                    $simpleUser->save();
+                }
                 $user->attachRole($simpleUser);
             }
         } else {
