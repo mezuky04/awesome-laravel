@@ -48,6 +48,11 @@
     <div id="content">
 
         <div class="container">
+            <noscript>
+                <div class="alert alert-danger no-js">
+                    <img src="/img/warning.svg" alt="warning" />
+                    &nbsp;&nbsp;Ooops. Looks like you have JavaScript disabled. Awesome Laravel is built using it. Please enable JavaScript to view awesome Laravel resources. Thank you!</div>
+            </noscript>
             @yield('content')
         </div>
 
