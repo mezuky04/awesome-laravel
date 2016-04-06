@@ -9,6 +9,8 @@ Route::get('/get-resources/{categoryName}', 'ResourcesController@getResources');
 Route::get('/get-resources', 'ResourcesController@getTopResources');
 Route::get('/increment-clicks/{resourceId}', 'ResourcesController@incrementClicks');
 
+Route::get('/contributors-guide', 'ContributorsGuideController@index');
+
 Route::get('/login/github', 'LoginController@redirectToProvider')->middleware('guest');
 Route::get('/login/github/callback', 'LoginController@handleProviderCallback')->middleware('guest');
 
