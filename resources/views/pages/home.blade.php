@@ -9,7 +9,7 @@
 
     <div class="row text-center">
         <h1 class="white-text thin">Awesome Laravel</h1>
-        <h3 class="white-text thin">Useful Laravel packages, tutorials, videos, articles and other resources.</h3>
+        <h2 class="white-text thin">Useful Laravel packages, tutorials, videos, articles and other resources.</h2>
     </div>
 
     <div class="row icon">
