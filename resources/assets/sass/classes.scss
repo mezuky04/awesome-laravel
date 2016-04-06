@@ -67,6 +67,18 @@
   cursor: pointer;
 }
 
+.loader {
+  margin-top: 20px;
+}
+
+.custom-well {
+  background-color: #FCFCFC;
+  border-bottom: 2px solid darken(#f7f7f7, 10);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-top: 20px;
+}
+
 /**
  * Allow vertical align in tables.
  */

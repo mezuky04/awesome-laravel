@@ -1,7 +1,6 @@
 <template>
-
     <choose-category></choose-category>
-    <resources-list v-bind:resources="resources" v-bind:category="selectedCategory"></resources-list>
+    <resources-list v-show="!loading" v-bind:resources="resources" v-bind:category="selectedCategory"></resources-list>
     <loader v-show="loading"></loader>
     
 </template>
@@ -47,6 +46,7 @@
                 var vn = this;
                 this.selectedCategory = category;
                 this.showLastResources = false;
+                this.loading = true;
 
                 // Set url used in request
                 var url = '/get-resources';
@@ -57,8 +57,9 @@
                 // Make get request
                 this.$http.get(url).then(function(success) {
                     vn.resources = success.data;
+                    vn.loading = false;
                 }, function(error) {
-                    //
+                    vn.loading = false;
                 });
             }
         }

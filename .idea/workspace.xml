@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf0bb24-a13b-4610-b449-480dcb3b9510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/resource-notification.css" afterPath="$PROJECT_DIR$/public/css/resource-notification.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js.map" afterPath="$PROJECT_DIR$/public/js/app.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/Loader.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/Loader.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/Resources.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/Resources.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/classes.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/classes.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/contributors-guide.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/contributors-guide.blade.php" />
     </list>
     <ignored path="awesome-laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +35,8 @@
       <file leaf-file-name="contributors-guide.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/contributors-guide.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="32" column="290" selection-start-line="32" selection-start-column="290" selection-end-line="32" selection-end-column="290" />
+            <state relative-caret-position="370">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -63,9 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Role.php" />
-        <option value="$PROJECT_DIR$/app/Permission.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_03_083109_entrust_setup_tables.php" />
         <option value="$PROJECT_DIR$/config/services.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/vendor/zizaco/entrust/src/Entrust/Middleware/EntrustRole.php" />
@@ -87,7 +93,6 @@
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Events/ResourceDeclined.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/navbar.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" />
         <option value="$PROJECT_DIR$/database/seeds/ResourcesTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_31_044812_create_resources_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
@@ -102,7 +107,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminCenter/AdminCenterController.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/PendingRequests.vue" />
-        <option value="$PROJECT_DIR$/resources/assets/sass/classes.scss" />
         <option value="$PROJECT_DIR$/resources/views/pages/partials/email.blade.php" />
         <option value="$PROJECT_DIR$/sitemap.xml" />
         <option value="$PROJECT_DIR$/config/app.php" />
@@ -113,6 +117,11 @@
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ContributorsGuideController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/img/oval.svg" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Resources.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Loader.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php" />
+        <option value="$PROJECT_DIR$/resources/assets/sass/classes.scss" />
         <option value="$PROJECT_DIR$/resources/views/pages/contributors-guide.blade.php" />
       </list>
     </option>
@@ -162,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -511,6 +519,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -590,11 +599,12 @@
       <workItem from="1459746133053" duration="16781000" />
       <workItem from="1459828783531" duration="11502000" />
       <workItem from="1459915622509" duration="4290000" />
+      <workItem from="1459944561548" duration="1914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143609000" />
+    <option name="totallyTimeSpent" value="145523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -636,29 +646,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/login.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/LoginToContinue.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/alerts.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/submit-resource.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -762,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Listeners/ResourceApprovedNotification.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -848,28 +827,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/login.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/classes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-          <folding>
-            <marker date="1459863862266" expanded="true" signature="70:91" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="109:130" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="138:179" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="192:318" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="374:462" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="483:598" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="652:804" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="827:944" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="973:1004" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="1062:1214" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="1241:1262" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="1286:1314" placeholder="{...}" />
-            <marker date="1459863862266" expanded="true" signature="1331:1353" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/acceptance/LoginTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -895,13 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="806">
           <caret line="142" column="51" selection-start-line="142" selection-start-column="51" selection-end-line="142" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="38" column="71" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -952,26 +902,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="151" column="53" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SitemapController.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/pages/submit-resource.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1459884982158" expanded="true" signature="51:711" placeholder="..." />
-            <marker date="1459884982158" expanded="true" signature="86:259" placeholder="..." />
-            <marker date="1459884982158" expanded="true" signature="118:248" placeholder="..." />
-            <marker date="1459884982158" expanded="true" signature="294:566" placeholder="..." />
-            <marker date="1459884982158" expanded="true" signature="593:709" placeholder="..." />
-            <marker date="1459884982158" expanded="true" signature="743:880" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -979,23 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-266">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <marker date="1459916960451" expanded="true" signature="31:2032" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="38:1133" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="542:648" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="664:1124" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="698:955" placeholder="{...}" />
-            <marker date="1459916960451" expanded="true" signature="749:807" placeholder="{...}" />
-            <marker date="1459916960451" expanded="true" signature="1149:2024" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1168:1979" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1217:1498" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1298:1409" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1334:1394" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1573:1663" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1606:1651" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1737:1948" placeholder="..." />
-            <marker date="1459916960451" expanded="true" signature="1781:1937" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,9 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-          <folding>
-            <marker date="1459918911599" expanded="true" signature="0:553" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,12 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <marker date="1459919563423" expanded="true" signature="43:136" placeholder=" Contributors guide page. ..." />
-            <marker date="1459919563423" expanded="true" signature="193:322" placeholder="..." />
-            <marker date="1459919563423" expanded="true" signature="202:229" placeholder=" @return mixed ..." />
-            <marker date="1459919563423" expanded="true" signature="261:315" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1026,25 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-          <folding>
-            <marker date="1459919575951" expanded="true" signature="866:1317" placeholder="..." />
-            <marker date="1459919575951" expanded="true" signature="968:1316" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="10" selection-start-line="2" selection-start-column="4" selection-end-line="16" selection-end-column="10" />
-          <folding>
-            <marker date="1459917773255" expanded="true" signature="51:649" placeholder="..." />
-            <marker date="1459917773255" expanded="true" signature="92:287" placeholder="..." />
-            <marker date="1459917773255" expanded="true" signature="124:276" placeholder="..." />
-            <marker date="1459917773255" expanded="true" signature="322:505" placeholder="..." />
-            <marker date="1459917773255" expanded="true" signature="533:647" placeholder="..." />
-            <marker date="1459917773255" expanded="true" signature="680:709" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,10 +946,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/contributors-guide.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <marker date="1459917773255" expanded="true" signature="51:649" placeholder="..." />
+            <marker date="1459917773255" expanded="true" signature="92:287" placeholder="..." />
+            <marker date="1459917773255" expanded="true" signature="124:276" placeholder="..." />
+            <marker date="1459917773255" expanded="true" signature="322:505" placeholder="..." />
+            <marker date="1459917773255" expanded="true" signature="533:647" placeholder="..." />
+            <marker date="1459917773255" expanded="true" signature="680:709" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/oval.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="98" selection-start-line="1" selection-start-column="98" selection-end-line="1" selection-end-column="98" />
+          <folding>
+            <marker date="1459944720917" expanded="true" signature="175:720" placeholder="..." />
+            <marker date="1459944720917" expanded="true" signature="215:713" placeholder="..." />
+            <marker date="1459944720917" expanded="true" signature="271:704" placeholder="..." />
+            <marker date="1459944720917" expanded="true" signature="387:691" placeholder="..." />
+            <marker date="1459944720917" expanded="true" signature="422:671" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Resources.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding>
+            <marker date="1459945164725" expanded="true" signature="0:226" placeholder="&lt;xml/&gt;" />
+            <marker date="1459945164725" expanded="true" signature="249:420" placeholder="..." />
+            <marker date="1459945164725" expanded="true" signature="441:1839" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="469:657" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="490:646" placeholder="{&quot;loading&quot;: false...}" />
+            <marker date="1459945164725" expanded="true" signature="680:812" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="823:866" placeholder="/** Called on ready. ...*/" />
+            <marker date="1459945164725" expanded="true" signature="893:938" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="957:1081" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="1010:1071" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="1101:1833" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="1149:1823" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="1458:1525" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="1622:1730" placeholder="{...}" />
+            <marker date="1459945164725" expanded="true" signature="1748:1807" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Loader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <folding>
+            <marker date="1459945324693" expanded="true" signature="0:158" placeholder="&lt;xml/&gt;" />
+            <marker date="1459945324693" expanded="true" signature="15:146" placeholder="&lt;xml/&gt;" />
+            <marker date="1459945324693" expanded="true" signature="188:204" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResourcesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
-          <caret line="32" column="290" selection-start-line="32" selection-start-column="290" selection-end-line="32" selection-end-column="290" />
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+          <folding>
+            <marker date="1459945370957" expanded="false" signature="44:129" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="134:230" placeholder=" Handle work with resources. ..." />
+            <marker date="1459945370957" expanded="true" signature="279:1456" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="288:395" placeholder=" Get all resources for given category. ..." />
+            <marker date="1459945370957" expanded="true" signature="447:1003" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="507:674" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="699:785" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="807:848" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="870:885" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="907:922" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="946:976" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="1013:1079" placeholder=" Get top resources added. ..." />
+            <marker date="1459945370957" expanded="true" signature="1121:1243" placeholder="..." />
+            <marker date="1459945370957" expanded="true" signature="1253:1330" placeholder=" Increment resource clicks. ..." />
+            <marker date="1459945370957" expanded="true" signature="1383:1453" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="151" column="53" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
+          <folding>
+            <marker date="1459882092454" expanded="true" signature="15:8541" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="23:451" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="505:928" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="979:1395" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="1455:1879" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="1915:2354" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="2387:2818" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="2860:3281" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="3353:3847" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="3897:4329" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="4353:6136" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="4365:4425" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="5873:5927" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="6146:6560" placeholder="..." />
+            <marker date="1459882092454" expanded="true" signature="6582:8537" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/classes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="852">
+          <caret line="74" column="27" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+          <folding>
+            <marker date="1459946377041" expanded="true" signature="70:91" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="109:130" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="138:179" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="192:318" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="374:462" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="483:598" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="652:804" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="827:944" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="973:1004" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1062:1214" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1241:1262" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1286:1314" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1331:1353" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1363:1386" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1401:1570" placeholder="{...}" />
+            <marker date="1459946377041" expanded="true" signature="1644:1673" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/contributors-guide.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding />
         </state>
       </provider>
