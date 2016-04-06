@@ -57,7 +57,7 @@
     <!-- BEGIN Footer -->
     <div id="footer">
         <div class="container text-center">
-            <span class="footer-text">Created with &hearts; by <a href="#">Alex</a>. Source code available on <a href="#">GitHub</a>.</span>
+            <span class="footer-text">Created with &hearts; by <a href="#">Alex</a>. Source code available on <a target="_blank" href="https://github.com/mezuky04/awesome-laravel">GitHub</a>.</span>
         </div>
     </div>
     <!-- END Footer -->
