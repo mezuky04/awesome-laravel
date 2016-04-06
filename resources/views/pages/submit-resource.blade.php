@@ -13,7 +13,7 @@
         <h4 class="read-guide white-text">Please read our <a href="/contributors-guide">Contributors guide</a> before posting a resource. Thank you!</h4>
     </div>
     <div class="row icon">
-        <img class="img-responsive center-responsive-image" src="/img/upload.svg">
+        <img class="img-responsive center-responsive-image" alt="awesome-laravel" src="/img/upload.svg">
     </div>
 @endsection
 

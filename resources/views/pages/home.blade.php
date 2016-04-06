@@ -13,7 +13,7 @@
     </div>
 
     <div class="row icon">
-        <img class="img-responsive center-responsive-image" src="/img/icon.svg">
+        <img class="img-responsive center-responsive-image" alt="awesome-laravel" src="/img/icon.svg">
     </div>
 @endsection
 @section('content')

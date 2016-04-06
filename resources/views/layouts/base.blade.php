@@ -7,7 +7,7 @@
     <meta name="description" content="Useful Laravel packages, tutorials, videos, articles and other resources.">
 
     <link rel="stylesheet" href="/css/app.css">
-
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
