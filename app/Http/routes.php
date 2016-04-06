@@ -21,4 +21,5 @@ Route::group(['prefix' => 'admin-center', 'namespace' => 'AdminCenter', 'middlew
     Route::get('/get-pending-requests', 'AdminCenterController@getPendingRequests');
     Route::get('/accept-resource-request/{resourceId}', 'AdminCenterController@acceptResourceRequest');
     Route::get('/decline-resource-request/{resourceId}', 'AdminCenterController@declineResourceRequest');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
